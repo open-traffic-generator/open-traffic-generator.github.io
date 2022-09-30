@@ -1,4 +1,14 @@
 site_name: Open Traffic Generator APIs & Data Models
 theme:
   name: material
+  features:
+    - navigation.tabs
 
+# Page tree
+nav:
+  - Home: index.md
+  - Model: model.md
+  - Implementations: implementations.md
+  - Clients: clients.md
+  - Coding: coding.md
+  - Examples: examples.md
