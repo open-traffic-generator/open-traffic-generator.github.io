@@ -2,7 +2,7 @@
 
 ## Use Cases
  
-Real use case are the basic of OTG development. Notable open-source projects leveraging OTG:
+Real use cases are the basis of OTG evolution. Notable open-source projects leveraging OTG:
  
 * [OpenConfig Feature Profiles](https://github.com/openconfig/featureprofiles)
 * [SONiC Testbed](https://github.com/sonic-net/sonic-mgmt)

@@ -55,9 +55,16 @@ There are multiple ways to communicate with a Traffic Generator via the OTG API:
 
 ## Use Cases
  
-Real use case are the basic of OTG development. Notable open-source projects leveraging OTG:
+Real use cases are the basis of OTG evolution. Notable open-source projects leveraging OTG:
  
 * [OpenConfig Feature Profiles](https://github.com/openconfig/featureprofiles)
 * [SONiC Testbed](https://github.com/sonic-net/sonic-mgmt)
 * [SONiC-DASH CI Pipeline](https://github.com/Azure/DASH)
 
+## Community
+
+Use our community resources to get help with Open Traffic Generator applications, develop your own implementation, or contribute to OTG:
+ 
+* [Open Traffic Generator on Github](https://github.com/open-traffic-generator)
+* [Ixia-c Slack Support Channel](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/support.md)
+* [Contribution Guidelines](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/contribute.md)
