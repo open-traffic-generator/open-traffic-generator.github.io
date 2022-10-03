@@ -46,4 +46,4 @@ Traffic Flows can also be associated with emulated **OTG Devices** to form 1:1 o
 The main role of **OTG Devices** is to emulate control plane protocols: BGP, IS-IS, and other protocols as the model evolves. This allows testing of protocol implementations by Device Under Test, and is also nessesary to for DUT to learn routes that would be needed to properly route Traffic Flows.
 
 ![Devices with BGP and Traffic Flows](images/otg-model-devices-bgp-flows.svg)
-<p style="text-align: center;"><sub>Fig. 3. Configuration with Traffic Flows betweeb OTG Devices</sub></p>
+<p style="text-align: center;"><sub>Fig. 4. Configuration with Traffic Flows betweeb OTG Devices running BGP</sub></p>
