@@ -23,8 +23,8 @@ OTG is an actively developed specification, with contributions from real [use ca
 ## Hierarchy
 
 The hierarchy of objects in the OTG Model is visualized below.
-<!-- TODO replace with an image from the images subfolder -->
-![OTG Hierarchy](https://raw.githubusercontent.com/open-traffic-generator/models/docs/docs/overview.drawio.svg)
+
+![OTG Hierarchy](images/otg-model-hierarchy.svg)
 <p style="text-align: center;"><sub>Fig. 1. Hierarchy of the OTG objects</sub></p>
 
 ##Raw Traffic Flows
