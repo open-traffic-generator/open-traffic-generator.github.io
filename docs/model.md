@@ -5,7 +5,7 @@ The formal [model specification](https://github.com/open-traffic-generator/model
 
 ## Building Blocks
 
-OTG is an actively developed specification, with contributions from real [use cases](/examples/#use-cases). The model allows to express the following building blocks of a traffic generator configuration:
+OTG is an actively developed specification, with contributions from real [use cases](/examples/#use-cases). The model defines the following components of a traffic generator configuration:
 
 * **Test Ports** with Layer 1&2 capabilities, including:
 	- LLDP, LAG, LACP
@@ -22,7 +22,7 @@ OTG is an actively developed specification, with contributions from real [use ca
 
 ## Hierarchy
 
-The hierarchy of objects the OTG Model is visualized below.
+The hierarchy of objects in the OTG Model is visualized below.
 <!-- TODO replace with an image from the images subfolder -->
 ![OTG Hierarchy](https://raw.githubusercontent.com/open-traffic-generator/models/docs/docs/overview.drawio.svg)
 <p style="text-align: center;"><sub>Fig. 1. Hierarchy of the OTG objects</sub></p>
