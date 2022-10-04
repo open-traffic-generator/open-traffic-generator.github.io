@@ -17,19 +17,19 @@ OTG is an actively developed specification, with contributions from real [use ca
 <!-- TODO add links from bold items to paragraphs in Model section -->
 * **Test Ports** with Layer 1&2 capabilities, including:
 	- LLDP, LAG, LACP
-* Emulated **OTG Devices** with Layer 2&3 features:
+* **Emulated Devices** with Layer 2&3 features:
 	- IPv4, IPv6 interfaces
 	- ARP, IPv6 ND
 	- BGP, IS-IS routing protocols
 * **Traffic Flows** 
-    - associated with either Test Ports, or OTG Devices
+    - associated with either Test Ports, or Emulated Devices
 	- expressing L2-4 properties like Ethernet, IPv4/IPv6, TCP/UDP
 	- stateless or stateful capabilities for transport protocols
 	- with implementation-specific application payload
 * Run-time **Metrics** and traffic **Capture** capabilities
 
 ![Example OTG Diagram](images/otg-example-diagram.svg)
-<sub>Fig. 1. Sample diagram of the OTG configuration with emulated BGP routers, traffic flows and a Device Under Test</sub>
+<sub>Fig. 1. OTG diagram with Traffic Flows between Emulated Devices, running via a Device Under Test (DUT)</sub>
 
 
 ## Implementations
