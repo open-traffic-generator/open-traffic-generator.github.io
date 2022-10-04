@@ -34,15 +34,15 @@ In the most simple case, the OTG Model describes **Raw Traffic Flows**: stateles
 ![Raw Traffic Flow](images/otg-model-raw-flows.svg)
 <p style="text-align: center;"><sub>Fig. 2. Two-arm configuration with a Raw Traffic Flow</sub></p>
 
-Since Traffic Flows are unidirectional and stateless, a bidirectional communication can be expressed by two Traffic Flows running on opposite directions.
+Since Traffic Flows are unidirectional and stateless, a bidirectional communication can be expressed by two Traffic Flows transmitting on opposite directions.
 
 ![Opposite Raw Traffic Flows](images/otg-model-raw-flows-bi.svg)
-<p style="text-align: center;"><sub>Fig. 3. Configuration with two Raw Traffic Flow representing a bidirectional comminication</sub></p>
+<p style="text-align: center;"><sub>Fig. 3. Configuration with two Raw Traffic Flows representing a bidirectional comminication</sub></p>
 
 
 ##Devices and Flows
  
-Traffic Flows can also be associated with **Emulated Devices** to form 1:1 or mesh communications between them. Such approach allows to use of the same Flow definition to originate traffic from multiple ports, as well as Link Aggregation Groups (LAGs).
+Traffic Flows can also be associated with **Emulated Devices** to form 1:1 or mesh communications between them. Such an approach allows the use of the same Flow definition to originate traffic from multiple ports, as well as Link Aggregation Groups (LAGs).
 
 ![Devices with Traffic Flows](images/otg-model-devices-flows.svg)
 <p style="text-align: center;"><sub>Fig. 4. Configuration with Traffic Flows between Emulated Devices</sub></p>
