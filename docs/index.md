@@ -13,7 +13,7 @@ The formal [model specification](https://github.com/open-traffic-generator/model
 
 ## Features
 
-OTG is an actively developing specification, with contributions from real [use cases](/examples/#use-cases). The model allows to express the following building blocks of a traffic generator configuration:
+OTG is an actively developed specification, with contributions from real [use cases](/examples/#use-cases). The model allows to express the following building blocks of a traffic generator configuration:
 <!-- TODO add links from bold items to paragraphs in Model section -->
 * **Test Ports** with Layer 1&2 capabilities, including:
 	- LLDP, LAG, LACP
