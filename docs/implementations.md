@@ -17,7 +17,7 @@ It is available for as a free Community Edition as well as a part of a commercia
  
 As a reference implementation of Open Traffic Generator API, Ixia-c supports client libraries in various languages, most prevalent being snappi for Python and gosnappi for Go.
 
-###Community Edition
+### Community Edition
  
 Components of Ixia-c Community Edition are:
 
@@ -62,3 +62,12 @@ Components of KENG are:
 ## Magna
 
 ## TRex
+
+[**snappi-trex**](https://github.com/open-traffic-generator/snappi-trex) is a plugin that allows executing [snappi](https://github.com/open-traffic-generator/snappi) scripts with [TRex Traffic Generator](https://trex-tgn.cisco.com).
+
+The plugin converts Open Traffic Generator configuration into the equivalent TRex STL Client configuration. This allows users to leverage TRex capabilities without having to write complex STL scripts. 
+
+![OTG Interface for TRex](https://raw.githubusercontent.com/open-traffic-generator/snappi-trex/main/docs/res/snappi-trex-design.svg)
+<p style="text-align: center;"><sub>Fig. 3. OTG interface for TRex using snappi-trex plugin</sub></p>
+
+The above diagram outlines the overall process of how the Open Traffic Generator API is able to interface with TRex and generate traffic over its network interfaces.
