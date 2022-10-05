@@ -71,3 +71,5 @@ The plugin converts Open Traffic Generator configuration into the equivalent TRe
 <p style="text-align: center;"><sub>Fig. 3. OTG interface for TRex using snappi-trex plugin</sub></p>
 
 The above diagram outlines the overall process of how the Open Traffic Generator API is able to interface with TRex and generate traffic over its network interfaces.
+
+The snappi-trex plugin supports stateless **Traffic Flows** over **Test Ports**. For the full list of supported OTG capabilities, see [snappi-trex documentation](https://github.com/open-traffic-generator/snappi-trex/blob/main/docs/features.md).

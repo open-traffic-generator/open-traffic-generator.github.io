@@ -11,7 +11,7 @@ Open Traffic Generator (OTG) APIs and data models are northbound API specificati
 
 The formal [model specification](https://github.com/open-traffic-generator/models/blob/master/artifacts/openapi.yaml) can be found on GitHub under [Open Traffic Generator](https://github.com/open-traffic-generator) organization. To explore the model, a viewer friendly [**ReDoc rendering**](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/open-traffic-generator/models/master/artifacts/openapi.yaml) is available as well. The OTG APIs support both REST and gRPC interfaces.
 
-## Features
+## [Features](model.md)
 
 OTG is an actively developed specification, with contributions from real [use cases](/examples/#use-cases). The model defines the following components of a traffic generator configuration:
 <!-- TODO add links from bold items to paragraphs in Model section -->
@@ -31,7 +31,7 @@ OTG is an actively developed specification, with contributions from real [use ca
 ![Example OTG Diagram](images/otg-example-diagram.svg)
 <p style="text-align: center;"><sub>Fig. 1. OTG diagram with Traffic Flows between Emulated Devices, running via a Device Under Test (DUT)</sub></p>
 
-## Implementations
+## [Implementations](implementations.md)
 
 To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator, is needed. There are several implementations available, and the list is growing:
  
@@ -41,7 +41,7 @@ To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator,
 * [**Magna**](https://github.com/openconfig/magna): open-source OTG implementation from [OpenConfig project](https://openconfig.net/)
 * [**TRex**](https://trex-tgn.cisco.com/): [snappi-trex](https://github.com/open-traffic-generator/snappi-trex) enables running OTG/snappi scripts with TRex. Supports layer 2-3 Traffic Flows
 
-## Clients
+## [Clients](clients.md)
 
 There are multiple ways to communicate with a Traffic Generator via the OTG API:
  <!-- TODO add links from bold items to paragraphs in Clients section -->
@@ -52,7 +52,7 @@ There are multiple ways to communicate with a Traffic Generator via the OTG API:
 
 [snappi](https://pypi.org/project/snappi/) and [gosnappi](https://pkg.go.dev/github.com/open-traffic-generator/snappi/gosnappi) provide client side API libraries for the OTG specifications for Python and Golang respectively.  For other languages, SDKs can be built using [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) (for REST API) or [protobuf tools](https://github.com/protocolbuffers/protobuf) (for gRPC).  
 
-## Use Cases
+## [Use Cases](examples.md#use-cases)
  
 Real use cases are the basis of OTG evolution. Notable open-source projects leveraging OTG:
  
