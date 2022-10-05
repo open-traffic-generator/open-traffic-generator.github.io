@@ -29,8 +29,7 @@ OTG is an actively developed specification, with contributions from real [use ca
 * Run-time **Metrics** and traffic **Capture** capabilities
 
 ![Example OTG Diagram](images/otg-example-diagram.svg)
-<sub>Fig. 1. OTG diagram with Traffic Flows between Emulated Devices, running via a Device Under Test (DUT)</sub>
-
+<p style="text-align: center;"><sub>Fig. 1. OTG diagram with Traffic Flows between Emulated Devices, running via a Device Under Test (DUT)</sub></p>
 
 ## Implementations
 
