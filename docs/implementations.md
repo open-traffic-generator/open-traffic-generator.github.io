@@ -59,6 +59,17 @@ Components of KENG are:
 
 ## IxNetwork
 
+Keysight's [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html) is industry's leading tool for performance testing of Layer 2/3 switches and routers.  It is capable of generating multiple terabytes of data and analyzing up to 4 million traffic flows simultaneously. IxNetwork scales to handle the most powerful devices and the largest networks.  IxNetwork supports a large variety of Keysight's hardware based traffic generators with speeds ranging from 1 Gbps to 800 Gbps.  It is also available in an all software form factor that runs in virtual machines.
+
+The [**snappi-ixnetwork**](https://github.com/open-traffic-generator/snappi-ixnetwork) plugin allows execution of [snappi](https://github.com/open-traffic-generator/snappi-ixnetwork) scripts against an IxNetwork based traffic generator.
+
+![snappi-ixnetwork Deployment Diagram](images/snappi-ixnetwork.svg)
+<p style="text-align: center;"><sub>Fig. 3. snappi-ixnetwork Deployment Diagram</sub></p>
+
+The above diagram gives a high level overview of how a snappi based Python script uses IxNetwork REST API to configure Keysight's load modules to generate traffic.
+
+The snappi-ixnetwork plugin supports Keysight's [AresONE](https://www.keysight.com/us/en/products/network-test/network-test-hardware/aresone-400ge.html) (400Gbps) and [Novus](https://www.keysight.com/us/en/products/network-test/network-test-hardware/novus-qsfp28-1005025ge.html) (100Gbps) based load modules.
+
 ## Magna
 
 ## TRex
