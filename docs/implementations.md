@@ -59,11 +59,11 @@ Components of KENG are:
 
 ## IxNetwork
 
-Keysight's [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html) is industry's leading tool for performance testing of Layer 2/3 switches and routers.  It is capable of generating multiple terabytes of data and analyzing up to 4 million traffic flows simultaneously. IxNetwork scales to handle the most powerful devices and the largest networks.  IxNetwork supports a large variety of Keysight's hardware based traffic generators with speeds ranging from 1 Gbps to 800 Gbps.  It is also available in an all software form factor that runs in virtual machines.
+Keysight's [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html) is a tool for performance testing of Layer 2/3 switches and routers.  It is capable of emulating a large number of routing protocols and generating terabytes of data.  It runs on large variety of Keysight's hardware based traffic generators and is also available in an all software form factor.  
 
 The [**snappi-ixnetwork**](https://github.com/open-traffic-generator/snappi-ixnetwork) plugin allows execution of [snappi](https://github.com/open-traffic-generator/snappi-ixnetwork) scripts against an IxNetwork based traffic generator.
 
-![snappi-ixnetwork Deployment Diagram](images/snappi-ixnetwork.svg)
+![snappi-ixnetwork Deployment Diagram](images/snappi-ixnetwork.drawio.svg)
 <p style="text-align: center;"><sub>Fig. 3. snappi-ixnetwork Deployment Diagram</sub></p>
 
 The above diagram gives a high level overview of how a snappi based Python script uses IxNetwork REST API to configure Keysight's load modules to generate traffic.
@@ -79,7 +79,7 @@ The snappi-ixnetwork plugin supports Keysight's [AresONE](https://www.keysight.c
 The plugin converts Open Traffic Generator configuration into the equivalent TRex STL Client configuration. This allows users to leverage TRex capabilities without having to write complex STL scripts. 
 
 ![OTG Interface for TRex](https://raw.githubusercontent.com/open-traffic-generator/snappi-trex/main/docs/res/snappi-trex-design.svg)
-<p style="text-align: center;"><sub>Fig. 3. OTG interface for TRex using snappi-trex plugin</sub></p>
+<p style="text-align: center;"><sub>Fig. 4. OTG interface for TRex using snappi-trex plugin</sub></p>
 
 The above diagram outlines the overall process of how the Open Traffic Generator API is able to interface with TRex and generate traffic over its network interfaces.
 
