@@ -73,6 +73,8 @@ The snappi-ixnetwork plugin supports Keysight's [AresONE](https://www.keysight.c
 
 ## Magna
 
+[Magna](https://github.com/openconfig/magna) traffic generator is an open-source OTG implementation from OpenConfig project. Magna is designed to be modular, such that it can be easily extended for new use cases. The base implementation does not cover all the OTG APIs, or functionality. More complete implementations such as Ixia-c are likely to be more suited to ongoing testing, an implementation like Magna allows additional flexibility to cover features not yet supported in these implementations, or to test independently of a third-party implementation.
+
 ## TRex
 
 [**snappi-trex**](https://github.com/open-traffic-generator/snappi-trex) is a plugin that allows executing [snappi](https://github.com/open-traffic-generator/snappi) scripts with [TRex Traffic Generator](https://trex-tgn.cisco.com).
