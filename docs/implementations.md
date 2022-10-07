@@ -1,8 +1,9 @@
 # Implementations
 
 ## Overview
+
 To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator, is needed. There are several implementations available, and the list is growing:
- 
+
 * [**Ixia-c**](https://ixia-c.dev): containerized traffic generator from Keysight, with a Community Edition
 * [**Keysight Elastic Network Generator**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/keysight-elastic-network-generator.html): commercial offering of containerized Ixia-c Traffic Generator from Keysight
 * [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html): [snappi-ixnetwork](https://github.com/open-traffic-generator/snappi-ixnetwork) enables running OTG/snappi scripts with Keysight IxNetwork
@@ -12,16 +13,16 @@ To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator,
 ## Ixia-c
 
 [Ixia-c](https://ixia-c.dev) is a modern, powerful and API-driven traffic generator designed to cater to the needs of hyperscalers, network hardware vendors and network automation professionals.
- 
-It is available for as a free Community Edition as well as a part of a commercial Keysight Elastic Network Generator offering. Ixia-c is distributed / deployed as a multi-container application consisting of a controller, traffic and protocol engines, and an optional gNMI server.
- 
+
+It is available both as a free Community Edition as well as a commercial edition, Keysight Elastic Network Generator (KENG), from Keysight. Ixia-c is distributed / deployed as a multi-container application consisting of a controller, traffic and protocol engines, and an optional gNMI server.
+
 As a reference implementation of Open Traffic Generator API, Ixia-c supports client libraries in various languages, most prevalent being snappi for Python and gosnappi for Go.
 
 ### Community Edition
- 
+
 Components of Ixia-c Community Edition are:
 
-* **Ixia-c Controller** serves as an OTG API Endpoint over HTTPs and gRPC 
+* **Ixia-c Controller** serves as an OTG API Endpoint over HTTPs and gRPC
 * **Ixia-c gNMI Server** exposes OTG Metrics over gNMI
 * **Ixia-c Traffic Engine** controls Test Ports and is responsible for transmitting and receiving Traffic Flows
 
@@ -39,17 +40,17 @@ Ixia-c Community Edition is limited to:
 
 ## KENG
 
-[Keysight Elastic Network Generator](https://www.keysight.com/us/en/products/network-test/protocol-load-test/keysight-elastic-network-generator.html) (KENG) is a commercial of Ixia-c with added capabilities:
+[Keysight Elastic Network Generator](https://www.keysight.com/us/en/products/network-test/protocol-load-test/keysight-elastic-network-generator.html) (KENG) is the commercial edition of Ixia-c with added capabilities:
 
 * **Accelerated traffic performance** via DPDK PCI
 * **Unlimited number** of Test Ports per session
 * Support of **L2 protocols** on Test Ports
 * Emulated Devices **with control plane protocols**
 * **Keysight Support** with SLAs
- 
+
 Components of KENG are:
 
-* **KENG Controller** serves as an OTG API Endpoint over HTTPs and gRPC 
+* **KENG Controller** serves as an OTG API Endpoint over HTTPs and gRPC
 * **Ixia-c gNMI Server** exposes OTG Metrics over gNMI
 * **Ixia-c Traffic Engine** controls Test Ports and is responsible for transmitting and receiving Traffic Flows
 * **Ixia-c Protocol Engine** is responsible for L2-3 protocol emulation
@@ -59,16 +60,16 @@ Components of KENG are:
 
 ## IxNetwork
 
-Keysight's [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html) is a tool for performance testing of Layer 2/3 switches and routers.  It is capable of emulating a large number of routing protocols and generating terabytes of data.  It runs on large variety of Keysight's hardware based traffic generators and is also available in an all software form factor.  
+Keysight's [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html) is a tool for performance testing of Layer 2/3 switches and routers.  It is capable of emulating a large number of routing protocols and generating terabytes of data.  It runs on a large variety of Keysight's hardware based traffic generators and is also available in an all software form factor.  
 
 The [**snappi-ixnetwork**](https://github.com/open-traffic-generator/snappi-ixnetwork) plugin allows execution of [snappi](https://github.com/open-traffic-generator/snappi-ixnetwork) scripts against an IxNetwork based traffic generator.
 
 ![snappi-ixnetwork Deployment Diagram](images/snappi-ixnetwork.drawio.svg)
 <p style="text-align: center;"><sub>Fig. 3. snappi-ixnetwork Deployment Diagram</sub></p>
 
-The above diagram gives a high level overview of how a snappi based Python script uses IxNetwork REST API to configure Keysight's load modules to generate traffic.
+The above diagram gives a high level overview of how a Python script written using the snappi API uses IxNetwork REST API to configure Keysight's load modules to generate traffic.
 
-The snappi-ixnetwork plugin supports Keysight's [AresONE](https://www.keysight.com/us/en/products/network-test/network-test-hardware/aresone-400ge.html) (400Gbps) and [Novus](https://www.keysight.com/us/en/products/network-test/network-test-hardware/novus-qsfp28-1005025ge.html) (100Gbps) based load modules.
+The snappi-ixnetwork plugin supports Keysight's [AresONE](https://www.keysight.com/us/en/products/network-test/network-test-hardware/aresone-400ge.html) (400 Gbps) and [Novus](https://www.keysight.com/us/en/products/network-test/network-test-hardware/novus-qsfp28-1005025ge.html) (100 Gbps) based load modules.
 
 ## Magna
 
@@ -76,7 +77,7 @@ The snappi-ixnetwork plugin supports Keysight's [AresONE](https://www.keysight.c
 
 [**snappi-trex**](https://github.com/open-traffic-generator/snappi-trex) is a plugin that allows executing [snappi](https://github.com/open-traffic-generator/snappi) scripts with [TRex Traffic Generator](https://trex-tgn.cisco.com).
 
-The plugin converts Open Traffic Generator configuration into the equivalent TRex STL Client configuration. This allows users to leverage TRex capabilities without having to write complex STL scripts. 
+The plugin converts Open Traffic Generator configuration into the equivalent TRex STL Client configuration. This allows users to leverage TRex capabilities without having to write complex STL scripts.
 
 ![OTG Interface for TRex](https://raw.githubusercontent.com/open-traffic-generator/snappi-trex/main/docs/res/snappi-trex-design.svg)
 <p style="text-align: center;"><sub>Fig. 4. OTG interface for TRex using snappi-trex plugin</sub></p>
