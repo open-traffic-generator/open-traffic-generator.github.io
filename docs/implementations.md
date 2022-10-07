@@ -62,9 +62,9 @@ Components of KENG are:
 
 Keysight's [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html) is a tool for performance testing of Layer 2/3 switches and routers.  It is capable of emulating a large number of routing protocols and generating terabytes of data.  It runs on a large variety of Keysight's hardware based traffic generators and is also available in an all software form factor.  
 
-The [**snappi-ixnetwork**](https://github.com/open-traffic-generator/snappi-ixnetwork) plugin allows execution of [snappi](https://github.com/open-traffic-generator/snappi-ixnetwork) scripts against an IxNetwork based traffic generator.
+The [**snappi-ixnetwork**](https://github.com/open-traffic-generator/snappi-ixnetwork) plugin allows execution of OTG [snappi](clients.md#snappi) scripts against an IxNetwork based traffic generator.
 
-![snappi-ixnetwork Deployment Diagram](images/snappi-ixnetwork.drawio.svg)
+![snappi-ixnetwork Deployment Diagram](images/ixnetwork-snappi.drawio.svg)
 <p style="text-align: center;"><sub>Fig. 3. snappi-ixnetwork Deployment Diagram</sub></p>
 
 The above diagram gives a high level overview of how a Python script written using the snappi API uses IxNetwork REST API to configure Keysight's load modules to generate traffic.
