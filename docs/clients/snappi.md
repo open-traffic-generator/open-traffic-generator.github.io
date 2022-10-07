@@ -1,1 +1,49 @@
 # snappi
+
+![snappi](https://github.com/open-traffic-generator/snappi/raw/main/snappi-logo.png)
+
+Test scripts written in `snappi`, an auto-generated Python module, can be executed against any traffic generator conforming to the Open Traffic Generator API.
+
+## Install on a client
+
+```sh
+python -m pip install --upgrade snappi
+```
+
+## Start scripting
+
+```python
+import snappi
+# create a new API instance where location points to controller.
+# this will use HTTP transport by default; in order to use gRPC instead,
+# one can pass additional kwarg `transport=snappi.Transport.GRPC`
+api = snappi.api(location='https://localhost')
+
+# create a config object to be pushed to controller
+config = api.config()
+# add a port with location pointing to traffic engine
+prt = config.ports.port(name='prt', location='localhost:5555')[-1]
+# add a flow and assign endpoints
+flw = config.flows.flow(name='flw')[-1]
+flw.tx_rx.port.tx_name = prt.name
+
+# configure 100 packets to be sent, each having a size of 128 bytes
+flw.size.fixed = 128
+flw.duration.fixed_packets.packets = 100
+
+# add Ethernet, IP and TCP protocol headers with defaults
+flw.packet.ethernet().ipv4().tcp()
+
+# push configuration
+api.set_config(config)
+
+# start transmitting configured flows
+ts = api.transmit_state()
+ts.state = ts.START
+api.set_transmit_state(ts)
+
+# fetch & print port metrics
+req = api.metrics_request()
+req.port.port_names = [prt.name]
+print(api.get_metrics(req))
+```
