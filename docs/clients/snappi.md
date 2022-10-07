@@ -4,7 +4,7 @@
 
 ## Overview
 
-Test scripts written in `snappi`, an auto-generated Python module, can be executed against any traffic generator conforming to the Open Traffic Generator API.
+Test scripts written in [`snappi`](https://github.com/open-traffic-generator/snappi), an auto-generated Python module, can be executed against any traffic generator conforming to the Open Traffic Generator API. The examples of `snappi` coding patterns can also be found as part of [Ixia-c documentation](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/snappi-constructs.md).
 
 ## Install on a client
 
@@ -20,6 +20,11 @@ Every object in snappi can be serialized to or deserialized from a JSON string w
 
 ```python
 import snappi
+
+# create a new API instance where location points to controller.
+# this will use HTTP transport by default; in order to use gRPC instead,
+# one can pass additional kwarg `transport=snappi.Transport.GRPC`:
+# api = snappi.api(location="localhost:40051", transport=snappi.Transport.GRPC)
 api = snappi.api()
 config = api.config()
 

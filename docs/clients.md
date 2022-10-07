@@ -12,11 +12,11 @@ It is a job of an **OTG Client** to perform these tasks by communicating with a 
  
 ## Command-line Utilities
  
-Command-line utilities is the fastest way to execute an OTG API request, especially in the environment without access to Python or Go development toolchains. They are also the easiest option to use by someone who is just starting with the OTG.
+Command-line utilities are the fastest way to execute an OTG API request, especially in the environment without access to Python or Go development toolchains. They are also the easiest option to use by someone who is just starting with the OTG.
  
 The most basic utility for any kind of REST API calls, including OTG, is **`curl`**. But, it leaves all the knowledge of OTG to the user. See the [curl](clients/curl.md) section for examples of using it with OTG.
  
-On the other side of the spectrum is **`otgen`**. This command-line utility comes as part of OTG toolkit. It is capable of manipulating a wide range of OTG features while hiding a lot of complexity from a user. `otgen` is an excelent choice for a first time OTG user to become familiar with this ecosystem. It is also a great choice for an advanced user who needs to execute a common OTG scenario in an environment without a development toolchain. Continue reading about this utility in the [otgen](clients/otgen.md) section.
+On the other end of the spectrum is **`otgen`**. This command-line utility comes as part of OTG toolkit. It is capable of manipulating a wide range of OTG features while hiding a lot of complexity from a user. `otgen` is an excelent choice for a first time OTG user to become familiar with this ecosystem. It is also a great choice for an advanced user who needs to execute a common OTG scenario in an environment without a development toolchain. Continue reading about this utility in the [otgen](clients/otgen.md) section.
  
 ## Standalone Test Programs
  
