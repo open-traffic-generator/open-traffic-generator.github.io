@@ -37,6 +37,3 @@ Testing frameworks like Pytest are an established choice for implementing CI/CD 
  
 This is the most common category of OTG applications as of today. Most, if not all OTG-based CI/CD pipelines make use of **snappi** or **gosnappi** libraries.
  
-## Network Test Runners
- 
-One of the notable OTG-based developments in Network CI is the OpenConfig project and its ONDATRA test runner. Learn more about this in the [ONDATRA section](clients/ondatra.md).
