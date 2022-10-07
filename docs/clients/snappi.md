@@ -12,6 +12,8 @@ python -m pip install --upgrade snappi
 
 ## Start scripting
 
+Add a new file `hello.py` with following snippet:
+
 ```python
 import snappi
 # create a new API instance where location points to controller.
@@ -46,4 +48,10 @@ api.set_transmit_state(ts)
 req = api.metrics_request()
 req.port.port_names = [prt.name]
 print(api.get_metrics(req))
+```
+
+## Run test
+
+```Shell
+python hello.py
 ```
