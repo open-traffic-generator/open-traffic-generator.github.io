@@ -2,6 +2,8 @@
 
 ![snappi](https://github.com/open-traffic-generator/snappi/raw/main/snappi-logo.png)
 
+## Overview
+
 Test scripts written in `gosnappi`, an auto-generated Go module, can be executed against any traffic generator conforming to the Open Traffic Generator API.
 
 ## Install on a client

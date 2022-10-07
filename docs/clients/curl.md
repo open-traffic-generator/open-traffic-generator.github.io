@@ -1,5 +1,7 @@
 # curl
 
+## Overview
+
 `curl` command-line utility is capable of communicating with any REST-compatible API endpoint over HTTP(s), and OTG is no different. Although you would not want `curl` to be your go-to choice for OTG, mastering some key queries will be quite useful down the road.
 
 For the examples below to work, start with initializing an environmental variable `OTG_HOST` with a correct URL string for your OTG API Endpoint deployment. Here we assume you've deployed the Endpoint on the same host where you'll run `curl`, over a default HTTPs port – similar to a basic [Ixia-c Traffic Engine deployment](../implementations.md#ixia-c).
