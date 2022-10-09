@@ -16,7 +16,7 @@ Command-line utilities are the fastest way to execute an OTG API request, especi
  
 The most basic utility for any kind of REST API calls, including OTG, is **`curl`**. But, it leaves all the knowledge of OTG to the user. See the [curl](clients/curl.md) section for examples of using it with OTG.
  
-On the other end of the spectrum is **`otgen`**. This command-line utility comes as part of OTG toolkit. It is capable of manipulating a wide range of OTG features while hiding a lot of complexity from a user. `otgen` is an excelent choice for a first time OTG user to become familiar with this ecosystem. It is also a great choice for an advanced user who needs to execute a common OTG scenario in an environment without a development toolchain. Continue reading about this utility in the [otgen](clients/otgen.md) section.
+On the other end of the spectrum is [**`otgen`**](https://github.com/open-traffic-generator/otgen). This command-line utility comes as part of OTG toolkit. It is capable of manipulating a wide range of OTG features while hiding a lot of complexity from a user. `otgen` is an excelent choice for a first time OTG user to become familiar with this ecosystem. It is also a great choice for an advanced user who needs to execute a common OTG scenario in an environment without a development toolchain. Continue reading about this utility in the [otgen](clients/otgen.md) section.
  
 ## Standalone Test Programs
  
