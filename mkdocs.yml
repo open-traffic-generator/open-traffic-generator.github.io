@@ -9,6 +9,11 @@ nav:
   - Home: index.md
   - Model: model.md
   - Implementations: implementations.md
-  - Clients: clients.md
+  - Clients:
+    - Overview: clients.md
+    - curl: clients/curl.md
+    - otgen: clients/otgen.md
+    - snappi: clients/snappi.md
+    - gosnappi: clients/gosnappi.md
   - Coding: coding.md
   - Examples: examples.md
