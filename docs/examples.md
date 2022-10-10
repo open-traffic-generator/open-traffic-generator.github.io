@@ -2,7 +2,7 @@
 
 ## [Basic Configurations](examples/basic.md)
 
-Here we provide a few basic OTG configuration files. See [more information](examples/basic.md) about these configurations.
+Here we provide a few sample OTG configuration files. See [more information](examples/basic.md) about these configurations.
 
 * [Single TCP Traffic Flow between two Traffic Ports](examples/flow.otg.yaml)
 * [Two Traffic Flows representing bi-directional UDP traffic between two Traffic Ports](examples/bidir-flow.otg.yaml)
@@ -10,12 +10,7 @@ Here we provide a few basic OTG configuration files. See [more information](exam
 
 ## [OTG Examples](examples/otg-examples.md)
 
-[Open Traffic Generator examples](https://github.com/open-traffic-generator/otg-examples) repository is a great way to get started. It features typical setups with OTG-based traffic generators using:
-
-* [Docker Compose](https://docs.docker.com/compose/)
-* [Containerlab](https://containerlab.dev/)
-
-See the list of available setups in [OTG Examples](examples/otg-examples.md) section.
+[Open Traffic Generator examples](https://github.com/open-traffic-generator/otg-examples) repository is a great way to get started. It features typical setups with OTG-based traffic generators. See the list of available setups in [OTG Examples](examples/otg-examples.md) section.
 
 ## Use Cases
  
