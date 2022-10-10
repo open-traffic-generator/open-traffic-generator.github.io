@@ -4,6 +4,10 @@ theme:
   logo: images/otg-icon-gear-wod.svg
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
 markdown_extensions:
   - tables
   - pymdownx.highlight:
