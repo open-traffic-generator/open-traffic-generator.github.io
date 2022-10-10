@@ -6,7 +6,7 @@
 
 ## Device Under Test
 
-Many network vendors provide versions of their Network Operating Systems as a CNF or VNF. To make OTG Examples available for a widest range of users, our labs use open-source or freely available NOSes like FRR. Replacing FRR with a container from a different vendor is a matter of modifying one of the lab examples.
+Many network vendors provide versions of their Network Operating Systems as a CNF or VNF. To make OTG Examples available for a widest range of users, our labs use open-source or freely available NOSes like [FRR](https://frrouting.org/). Replacing FRR with a container from a different vendor is a matter of modifying one of the lab examples.
 
 Some examples don't have any DUT and use back-2-back connections between Test Ports. These are quite useful to make sure the Traffic Generator part works just fine by itself, before introducing a DUT.
 
@@ -25,9 +25,9 @@ Some of the lab examples include Github Action workflow for executing OTG tests 
 
 | Lab                                                                                                                     | OTG Tool    | DUT  | Client     | Infrastructure | CI  |
 | ----------------------------------------------------------------------------------------------------------------------- | ----------- | ---- | ---------- | -------------- | --- |
-| [Ixia-c traffic engine](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b)            | Ixia-c TE   | B2B  | `otgen`    | Compose        | yes |
-| [KENG 3 pairs](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b-3pair)               | KENG TE     | B2B  | `otgen`    | Compose        | no  |
-| [KENG BGP and traffic](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/cpdp-b2b)        | KENG PE+TE  | B2B  | `gosnappi` | Compose        | yes |
-| [Hello, snappi! Welcome to the Clab!](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b) | Ixia-c-one  | B2B  | `snappi`   | Containerlab   | no  |
-| [Ixia-c-one and FRR](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-te-frr)               | Ixia-c FE   | FRR  | `otgen`    | Containerlab   | no  |
-| [Remote Triggered Black Hole](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/rtbh)               | Ixia-c-one  | FRR  | `gosnappi` | Containerlab   | yes |
+| [Ixia-c traffic engine](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b)            | [Ixia-c TE](../implementations.md#ixia-c)   | B2B  | [`otgen`](../clients/otgen.md)    | Compose        | yes |
+| [KENG 3 pairs](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b-3pair)               | [Ixia-c TE](../implementations.md#ixia-c)   | B2B  | [`otgen`](../clients/otgen.md)    | Compose        | no  |
+| [KENG BGP and traffic](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/cpdp-b2b)        | [KENG PE+TE](../implementations.md#keng)  | B2B  | [`gosnappi`](../clients/gosnappi.md) | Compose        | yes |
+| [Hello, snappi! Welcome to the Clab!](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b) | [Ixia-c-one](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/deployments.md#deploy-ixia-c-one-using-containerlab)  | B2B  | [`snappi`](../clients/snappi.md)   | Containerlab   | no  |
+| [Ixia-c-one and FRR](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-te-frr)               | [Ixia-c TE](../implementations.md#ixia-c)   | FRR  | [`otgen`](../clients/otgen.md)    | Containerlab   | no  |
+| [Remote Triggered Black Hole](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/rtbh)               | [Ixia-c-one](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/deployments.md#deploy-ixia-c-one-using-containerlab)  | FRR  | [`gosnappi`](../clients/gosnappi.md) | Containerlab   | yes |
