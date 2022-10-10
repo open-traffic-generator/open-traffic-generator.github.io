@@ -5,6 +5,7 @@ edit_uri: ""
 theme:
   name: material
   logo: images/otg-icon-gear-wod.svg
+  favicon: images/favicon.ico
   features:
     - navigation.tabs
     - navigation.tabs.sticky
