@@ -38,7 +38,6 @@ nav:
     - otgen: clients/otgen.md
     - snappi: clients/snappi.md
     - gosnappi: clients/gosnappi.md
-  - Coding: coding.md
   - Examples: 
     - Overview: examples.md
     - Basic Configurations: examples/basic.md
