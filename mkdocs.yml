@@ -1,6 +1,7 @@
 site_name: Open Traffic Generator APIs & Data Models
 theme:
   name: material
+  logo: images/otg-icon-gear-wod.svg
   features:
     - navigation.tabs
 markdown_extensions:
