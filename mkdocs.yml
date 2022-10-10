@@ -1,8 +1,17 @@
 site_name: Open Traffic Generator APIs & Data Models
+repo_url: https://github.com/open-traffic-generator/models
+repo_name: open-traffic-generator
+edit_uri: ""
 theme:
   name: material
+  logo: images/otg-icon-gear-wod.svg
+  favicon: images/favicon.ico
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
 markdown_extensions:
   - tables
   - pymdownx.highlight:
@@ -10,7 +19,15 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-
+extra:
+  analytics:
+    provider: google
+    property: G-N6X4KDVDJF
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/open-traffic-generator
+    - icon: fontawesome/brands/slack
+      link: https://ixia-c.slack.com
 # Page tree
 nav:
   - Home: index.md
@@ -22,7 +39,6 @@ nav:
     - otgen: clients/otgen.md
     - snappi: clients/snappi.md
     - gosnappi: clients/gosnappi.md
-  - Coding: coding.md
   - Examples: 
     - Overview: examples.md
     - Basic Configurations: examples/basic.md
