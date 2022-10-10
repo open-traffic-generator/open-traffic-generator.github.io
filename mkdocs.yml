@@ -15,6 +15,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+extra:
+  analytics:
+    provider: google
+    property: G-N6X4KDVDJF
 
 # Page tree
 nav:
