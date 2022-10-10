@@ -23,11 +23,11 @@ Some of the lab examples include Github Action workflow for executing OTG tests 
 
 ## Reference
 
-| Lab                                                                                                             | OTG Tool    | DUT  | Client     | Infrastructure | CI  | Description                          |
-| --------------------------------------------------------------------------------------------------------------- | ----------- | ---- | ---------- | -------------- | --- | ------------------------------------ |
-| [**`dp-b2b`**](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b)             | Ixia-c TE   | B2B  | `otgen`    | Compose        | yes | Ixia-c traffic engine back-to-back   |
-| [**`dp-b2b-3pair`**](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b-3pair) | KENG TE     | B2B  | `otgen`    | Compose        | no  | KENG 3 back-to-back pairs            |
-| [**`cpdp-b2b`**](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/cpdp-b2b)      | KENG PE+TE  | B2B  | `gosnappi` | Compose        | yes | KENG back-to-back BGP and traffic    |
-| [**`dp-b2b`** ](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b)               | Ixia-c-one  | B2B  | `snappi`   | Containerlab   | no  | Hello, snappi! Welcome to the Clab!  |
-| [**`dp-frr`**](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-te-frr)             | Ixia-c FE   | FRR  | `otgen`    | Containerlab   | no  | Ixia-c Traffic Engine and FRR        |
-| [**`rtbh`**](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/rtbh)                        | Ixia-c-one  | FRR  | `gosnappi` | Containerlab   | yes | Remote Triggered Black Hole Lab      |
+| Lab                                                                                                                     | OTG Tool    | DUT  | Client     | Infrastructure | CI  |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------- | ---- | ---------- | -------------- | --- |
+| [Ixia-c traffic engine](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b)            | Ixia-c TE   | B2B  | `otgen`    | Compose        | yes |
+| [KENG 3 pairs](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b-3pair)               | KENG TE     | B2B  | `otgen`    | Compose        | no  |
+| [KENG BGP and traffic](https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/cpdp-b2b)        | KENG PE+TE  | B2B  | `gosnappi` | Compose        | yes |
+| [Hello, snappi! Welcome to the Clab!](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b) | Ixia-c-one  | B2B  | `snappi`   | Containerlab   | no  |
+| [Ixia-c-one and FRR](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-te-frr)               | Ixia-c FE   | FRR  | `otgen`    | Containerlab   | no  |
+| [Remote Triggered Black Hole](https://github.com/open-traffic-generator/otg-examples/blob/main/clab/rtbh)               | Ixia-c-one  | FRR  | `gosnappi` | Containerlab   | yes |
