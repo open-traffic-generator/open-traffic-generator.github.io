@@ -1,0 +1,206 @@
+{
+  "ports": [
+    {
+      "location": "localhost:5555",
+      "name": "p1"
+    },
+    {
+      "location": "localhost:5556",
+      "name": "p2"
+    }
+  ],
+  "flows": [
+    {
+      "tx_rx": {
+        "choice": "port",
+        "port": {
+          "tx_name": "p1",
+          "rx_name": "p2"
+        }
+      },
+      "packet": [
+        {
+          "choice": "ethernet",
+          "ethernet": {
+            "dst": {
+              "choice": "value",
+              "value": "00:00:00:00:00:bb"
+            },
+            "src": {
+              "choice": "value",
+              "value": "00:00:00:00:00:aa"
+            },
+            "ether_type": {
+              "choice": "auto",
+              "auto": 65535
+            }
+          }
+        },
+        {
+          "choice": "ipv4",
+          "ipv4": {
+            "version": {
+              "choice": "value",
+              "value": 4
+            },
+            "header_length": {
+              "choice": "auto",
+              "auto": 5
+            },
+            "priority": {
+              "choice": "dscp",
+              "dscp": {
+                "phb": {
+                  "choice": "value",
+                  "value": 0
+                },
+                "ecn": {
+                  "choice": "value",
+                  "value": 0
+                }
+              }
+            },
+            "total_length": {
+              "choice": "auto",
+              "auto": 46
+            },
+            "identification": {
+              "choice": "value",
+              "value": 0
+            },
+            "reserved": {
+              "choice": "value",
+              "value": 0
+            },
+            "dont_fragment": {
+              "choice": "value",
+              "value": 0
+            },
+            "more_fragments": {
+              "choice": "value",
+              "value": 0
+            },
+            "fragment_offset": {
+              "choice": "value",
+              "value": 0
+            },
+            "time_to_live": {
+              "choice": "value",
+              "value": 64
+            },
+            "protocol": {
+              "choice": "auto",
+              "auto": 61
+            },
+            "src": {
+              "choice": "increment",
+              "increment": {
+                "start": "1.1.1.1",
+                "step": "0.1.2.3",
+                "count": 100
+              }
+            },
+            "dst": {
+              "choice": "value",
+              "value": "192.0.2.1"
+            }
+          }
+        },
+        {
+          "choice": "tcp",
+          "tcp": {
+            "src_port": {
+              "choice": "increment",
+              "increment": {
+                "start": 23250,
+                "step": 7,
+                "count": 100
+              }
+            },
+            "dst_port": {
+              "choice": "value",
+              "value": 80
+            },
+            "seq_num": {
+              "choice": "value",
+              "value": "0"
+            },
+            "ack_num": {
+              "choice": "value",
+              "value": "0"
+            },
+            "data_offset": {
+              "choice": "value",
+              "value": 0
+            },
+            "ecn_ns": {
+              "choice": "value",
+              "value": 0
+            },
+            "ecn_cwr": {
+              "choice": "value",
+              "value": 0
+            },
+            "ecn_echo": {
+              "choice": "value",
+              "value": 0
+            },
+            "ctl_urg": {
+              "choice": "value",
+              "value": 0
+            },
+            "ctl_ack": {
+              "choice": "value",
+              "value": 0
+            },
+            "ctl_psh": {
+              "choice": "value",
+              "value": 0
+            },
+            "ctl_rst": {
+              "choice": "value",
+              "value": 0
+            },
+            "ctl_syn": {
+              "choice": "value",
+              "value": 0
+            },
+            "ctl_fin": {
+              "choice": "value",
+              "value": 0
+            },
+            "window": {
+              "choice": "value",
+              "value": 0
+            }
+          }
+        }
+      ],
+      "size": {
+        "choice": "fixed",
+        "fixed": 512
+      },
+      "rate": {
+        "choice": "pps",
+        "pps": "100"
+      },
+      "duration": {
+        "choice": "fixed_packets",
+        "fixed_packets": {
+          "packets": 1000,
+          "gap": 12
+        }
+      },
+      "metrics": {
+        "enable": true,
+        "loss": false,
+        "timestamps": false,
+        "latency": {
+          "enable": false,
+          "mode": "store_forward"
+        }
+      },
+      "name": "p1-p2"
+    }
+  ]
+}
