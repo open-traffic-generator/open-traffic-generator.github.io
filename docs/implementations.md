@@ -24,7 +24,7 @@ Components of Ixia-c Community Edition are:
 
 * **Ixia-c Controller** serves as an OTG API Endpoint over HTTPs and gRPC
 * **Ixia-c gNMI Server** exposes OTG Metrics over gNMI
-* **Ixia-c Traffic Engine** controls Test Ports and is responsible for transmitting and receiving Traffic Flows
+* **Ixia-c Traffic Engine (TE)** controls Test Ports and is responsible for transmitting and receiving Traffic Flows
 
 ![Ixia-c Traffic Engine Deployment Diagram](images/ixia-c-te-dut.svg)
 <p style="text-align: center;"><sub>Fig. 1. Ixia-c Traffic Engine Deployment Diagram</sub></p>
@@ -52,8 +52,8 @@ Components of KENG are:
 
 * **KENG Controller** serves as an OTG API Endpoint over HTTPs and gRPC
 * **Ixia-c gNMI Server** exposes OTG Metrics over gNMI
-* **Ixia-c Traffic Engine** controls Test Ports and is responsible for transmitting and receiving Traffic Flows
-* **Ixia-c Protocol Engine** is responsible for L2-3 protocol emulation
+* **Ixia-c Traffic Engine (TE)** controls Test Ports and is responsible for transmitting and receiving Traffic Flows
+* **Ixia-c Protocol Engine (PE)** is responsible for L2-3 protocol emulation
 
 ![KENG Deployment Diagram](images/ixia-c-te-pe-dut.svg)
 <p style="text-align: center;"><sub>Fig. 2. Keysight Elastic Network Generator Deployment Diagram</sub></p>

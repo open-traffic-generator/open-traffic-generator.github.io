@@ -3,6 +3,13 @@ theme:
   name: material
   features:
     - navigation.tabs
+markdown_extensions:
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 # Page tree
 nav:
@@ -16,4 +23,7 @@ nav:
     - snappi: clients/snappi.md
     - gosnappi: clients/gosnappi.md
   - Coding: coding.md
-  - Examples: examples.md
+  - Examples: 
+    - Overview: examples.md
+    - Basic Configurations: examples/basic.md
+    - OTG Examples: examples/otg-examples.md
