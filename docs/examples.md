@@ -10,7 +10,7 @@ Here we provide a few sample OTG configuration files. See [more information](exa
 
 ## [OTG Examples](examples/otg-examples.md)
 
-[Open Traffic Generator examples](https://github.com/open-traffic-generator/otg-examples) repository is a great way to get started. It features typical setups with OTG-based traffic generators. See the list of available setups in [OTG Examples](examples/otg-examples.md) section.
+[Open Traffic Generator examples](https://github.com/open-traffic-generator/otg-examples) repository is a great way to get started. It features typical setups with OTG-based traffic generators. See the list of available setups in [OTG Examples](examples/otg-examples/README.md) section.
 
 ## Use Cases
  

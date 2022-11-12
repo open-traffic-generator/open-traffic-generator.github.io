@@ -42,4 +42,4 @@ nav:
   - Examples: 
     - Overview: examples.md
     - Basic Configurations: examples/basic.md
-    - OTG Examples: examples/otg-examples.md
+    - OTG Examples: examples/otg-examples/README.md
