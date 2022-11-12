@@ -8,9 +8,9 @@ Here we provide a few sample OTG configuration files. See [more information](exa
 * [Two Traffic Flows representing bi-directional UDP traffic between two Traffic Ports](examples/bidir-flow.otg.yaml)
 * [Single Traffic Flows representing TCP traffic between two Emulated Devices](examples/device-flow.otg.yaml)
 
-## [OTG Examples](examples/otg-examples.md)
+## [OTG Examples](examples/otg-examples/README.md)
 
-[Open Traffic Generator examples](https://github.com/open-traffic-generator/otg-examples) repository is a great way to get started. It features typical setups with OTG-based traffic generators. See the list of available setups in [OTG Examples](examples/otg-examples.md) section.
+[Open Traffic Generator examples](https://github.com/open-traffic-generator/otg-examples) repository is a great way to get started. It features typical setups with OTG-based traffic generators. See the list of available setups in [OTG Examples](examples/otg-examples/README.md) section.
 
 ## Use Cases
  
