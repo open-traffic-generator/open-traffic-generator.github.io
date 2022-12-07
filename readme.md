@@ -11,3 +11,11 @@ $ mkdocs build
 ```
 
 You can point your browser to `index.html` in the `site` directory to view it.
+
+## Submodules
+
+Parts of the `docs` hierarchy are coming from submodules. To update content of the submodules to the most recent one, use:
+
+```Shell
+git submodule update --remote
+```
