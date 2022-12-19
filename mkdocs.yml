@@ -36,7 +36,7 @@ nav:
   - Clients:
     - Overview: clients.md
     - curl: clients/curl.md
-    - otgen: clients/otgen.md
+    - otgen: clients/otgen/README.md
     - snappi: clients/snappi.md
     - gosnappi: clients/gosnappi.md
   - Examples: 

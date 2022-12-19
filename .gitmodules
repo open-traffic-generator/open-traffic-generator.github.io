@@ -2,3 +2,7 @@
 	path = docs/examples/otg-examples
 	url = https://github.com/open-traffic-generator/otg-examples.git
 	update = merge
+[submodule "docs/clients/otgen"]
+	path = docs/clients/otgen
+	url = https://github.com/open-traffic-generator/otgen.git
+	update = merge
