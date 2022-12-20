@@ -3,5 +3,8 @@
   "extends": [
     "config:base",
     ":dependencyDashboard"
-  ]
+  ],
+  "git-submodules": {
+    "enabled": true
+  }
 }
