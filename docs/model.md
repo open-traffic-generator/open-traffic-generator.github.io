@@ -1,7 +1,7 @@
 # Model
 
 ## Formal Model
-The formal [model specification](https://github.com/open-traffic-generator/models/blob/master/artifacts/openapi.yaml) can be found on GitHub under [Open Traffic Generator](https://github.com/open-traffic-generator) organization. To explore the model, a viewer friendly [**ReDoc rendering**](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/open-traffic-generator/models/master/artifacts/openapi.yaml) is available as well. The OTG APIs support both REST and gRPC interfaces.
+The formal [model specification](https://github.com/open-traffic-generator/models/blob/master/artifacts/openapi.yaml) can be found on GitHub under [Open Traffic Generator](https://github.com/open-traffic-generator) organization. To explore the model, a viewer friendly [**ReDoc rendering**](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/open-traffic-generator/models/master/artifacts/openapi.yaml&nocors) is available as well. The OTG APIs support both REST and gRPC interfaces.
 
 ## Building Blocks
 
@@ -13,7 +13,7 @@ OTG is an actively developed specification, with contributions from real [use ca
 	- IPv4, IPv6 interfaces
 	- ARP, IPv6 ND
 	- BGP, IS-IS routing protocols
-* **Traffic Flows** 
+* **Traffic Flows**
     - associated with either Test Ports, or Emulated Devices
 	- expressing L2-4 properties like Ethernet, IPv4/IPv6, TCP/UDP
 	- stateless or stateful capabilities for transport protocols
@@ -28,7 +28,7 @@ The hierarchy of objects in the OTG Model is visualized below.
 <p style="text-align: center;"><sub>Fig. 1. Hierarchy of the OTG objects</sub></p>
 
 ##Raw Traffic Flows
- 
+
 In the most simple case, the OTG Model describes **Raw Traffic Flows**: stateless streams of packets to be transmitted from one Test Port, and typically, but not always, expected to be received on another Test Port. A configuration when a flow is not expected to be received, is called *one-arm*. Otherwise, it is a *two-arm* configuration.
 
 ![Raw Traffic Flow](images/otg-model-raw-flows.svg)
@@ -41,14 +41,14 @@ Since Traffic Flows are unidirectional and stateless, a bidirectional communicat
 
 
 ##Devices and Flows
- 
+
 Traffic Flows can also be associated with **Emulated Devices** to form 1:1 or mesh communications between them. Such an approach allows the use of the same Flow definition to originate traffic from multiple ports, as well as Link Aggregation Groups (LAGs).
 
 ![Devices with Traffic Flows](images/otg-model-devices-flows.svg)
 <p style="text-align: center;"><sub>Fig. 4. Configuration with Traffic Flows between Emulated Devices</sub></p>
 
 ##Devices and Protocols
- 
+
 The main role of **Emulated Devices** is to run control plane protocols: BGP, IS-IS, and more as the model evolves. This allows testing of protocols implementated by a Device Under Test (DUT), and is also nessesary for the DUT to learn routes that it would need to properly route Traffic Flows.
 
 ![Devices with BGP and Traffic Flows](images/otg-model-devices-bgp-flows.svg)
