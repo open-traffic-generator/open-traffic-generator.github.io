@@ -9,7 +9,7 @@ Open Traffic Generator (OTG) APIs and data models are northbound API specificati
 * Intent-based
 * Declarative
 
-The formal [model specification](https://github.com/open-traffic-generator/models/blob/master/artifacts/openapi.yaml) can be found on GitHub under [Open Traffic Generator](https://github.com/open-traffic-generator) organization. To explore the model, a viewer friendly [**ReDoc rendering**](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/open-traffic-generator/models/master/artifacts/openapi.yaml) is available as well. The OTG APIs support both REST and gRPC interfaces.
+The formal [model specification](https://github.com/open-traffic-generator/models/blob/master/artifacts/openapi.yaml) can be found on GitHub under [Open Traffic Generator](https://github.com/open-traffic-generator) organization. To explore the model, a viewer friendly [**ReDoc rendering**](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/open-traffic-generator/models/master/artifacts/openapi.yaml&nocors) is available as well. The OTG APIs support both REST and gRPC interfaces.
 
 ## [Features](model.md)
 
@@ -21,7 +21,7 @@ OTG is an actively developed specification, with contributions from real [use ca
 	- IPv4, IPv6 interfaces
 	- ARP, IPv6 ND
 	- BGP, IS-IS routing protocols
-* **Traffic Flows** 
+* **Traffic Flows**
     - associated with either Test Ports, or Emulated Devices
 	- expressing L2-4 properties like Ethernet, IPv4/IPv6, TCP/UDP
 	- stateless or stateful capabilities for transport protocols
@@ -34,7 +34,7 @@ OTG is an actively developed specification, with contributions from real [use ca
 ## [Implementations](implementations.md)
 
 To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator, is needed. There are several implementations available, and the list is growing:
- 
+
 * [**Ixia-c Community Edition**](https://ixia-c.dev): container-based traffic generator from Keysight. The Community Edition supports up to 4 Test Ports and stateless layer 2-3 Traffic Flows
 * [**Keysight Elastic Network Generator**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/keysight-elastic-network-generator.html): commercial offering of OTG implementation for a family of Keysight/Ixia Traffic Generators
 * [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html): [snappi-ixnetwork](https://github.com/open-traffic-generator/snappi-ixnetwork) enables running OTG/snappi scripts with Keysight IxNetwork
@@ -50,12 +50,12 @@ There are multiple ways to communicate with a Traffic Generator via the OTG API:
 * **direct REST or gRPC calls** as an alternative to using *snappi*
 * **custom** OTG client applications
 
-[snappi](https://pypi.org/project/snappi/) and [gosnappi](https://pkg.go.dev/github.com/open-traffic-generator/snappi/gosnappi) provide client side API libraries for the OTG specifications for Python and Golang respectively.  For other languages, SDKs can be built using [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) (for REST API) or [protobuf tools](https://github.com/protocolbuffers/protobuf) (for gRPC).  
+[snappi](https://pypi.org/project/snappi/) and [gosnappi](https://pkg.go.dev/github.com/open-traffic-generator/snappi/gosnappi) provide client side API libraries for the OTG specifications for Python and Golang respectively.  For other languages, SDKs can be built using [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) (for REST API) or [protobuf tools](https://github.com/protocolbuffers/protobuf) (for gRPC).
 
 ## [Use Cases](examples.md#use-cases)
- 
+
 Real use cases are the basis of OTG evolution. Notable open-source projects leveraging OTG:
- 
+
 * [OpenConfig Feature Profiles](https://github.com/openconfig/featureprofiles)
 * [SONiC Testbed](https://github.com/sonic-net/sonic-mgmt)
 * [SONiC-DASH CI Pipeline](https://github.com/Azure/DASH)
@@ -63,7 +63,7 @@ Real use cases are the basis of OTG evolution. Notable open-source projects leve
 ## Community
 
 Use our community resources to get help with Open Traffic Generator applications, develop your own implementation, or contribute to OTG:
- 
+
 * [Open Traffic Generator on Github](https://github.com/open-traffic-generator)
 * [Ixia-c Slack Support Channel](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/support.md)
 * [Contribution Guidelines](https://github.com/open-traffic-generator/ixia-c/blob/main/docs/contribute.md)
