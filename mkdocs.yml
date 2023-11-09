@@ -4,8 +4,11 @@ repo_name: open-traffic-generator
 edit_uri: ""
 theme:
   name: material
-  logo: images/otg-icon-gear-wod.svg
+  logo: images/otg_icon_white.svg
   favicon: images/favicon.ico
+  palette:
+    primary: indigo
+    accent: indigo
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -39,7 +42,7 @@ nav:
     - otgen: clients/otgen/README.md
     - snappi: clients/snappi.md
     - gosnappi: clients/gosnappi.md
-  - Examples: 
+  - Examples:
     - Overview: examples.md
     - Basic Configurations: examples/basic.md
     - OTG Examples: examples/otg-examples/README.md

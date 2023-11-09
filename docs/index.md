@@ -1,6 +1,6 @@
 # Home
 
-## Overview
+<p align=center><img src="images/otg_logo.svg" width="300"></p>
 
 Open Traffic Generator (OTG) APIs and data models are northbound API specifications for modern Traffic Generators and Protocol Emulators designed to test Layer 2-7 network devices. They include support for testing  forwarding as well as control planes. OTG APIs are:
 
