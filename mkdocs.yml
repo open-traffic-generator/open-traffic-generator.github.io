@@ -4,7 +4,7 @@ repo_name: open-traffic-generator
 edit_uri: ""
 theme:
   name: material
-  logo: images/otg_icon_color_noborder.svg
+  logo: images/otg_icon_white.svg
   favicon: images/favicon.ico
   palette:
     primary: indigo
