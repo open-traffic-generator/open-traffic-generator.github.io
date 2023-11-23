@@ -1,0 +1,1063 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+    
+    
+      
+        <title>OTGen: Open Traffic Generator CLI Tool - Open Traffic Generator APIs & Data Models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-N6X4KDVDJF"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-N6X4KDVDJF",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-N6X4KDVDJF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#otgen-open-traffic-generator-cli-tool" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Open Traffic Generator APIs &amp; Data Models" class="md-header__button md-logo" aria-label="Open Traffic Generator APIs & Data Models" data-md-component="logo">
+      
+  <img src="../../../../images/otg_icon_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Traffic Generator APIs & Data Models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OTGen: Open Traffic Generator CLI Tool
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/open-traffic-generator/models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    open-traffic-generator
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../model/" class="md-tabs__link">
+        
+  
+    
+  
+  Model
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../implementations/" class="md-tabs__link">
+        
+  
+    
+  
+  Implementations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../clients/" class="md-tabs__link">
+          
+  
+  Clients
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Open Traffic Generator APIs &amp; Data Models" class="md-nav__button md-logo" aria-label="Open Traffic Generator APIs & Data Models" data-md-component="logo">
+      
+  <img src="../../../../images/otg_icon_white.svg" alt="logo">
+
+    </a>
+    Open Traffic Generator APIs & Data Models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/open-traffic-generator/models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    open-traffic-generator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../implementations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Clients
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Clients
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clients/curl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    curl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clients/otgen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    otgen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clients/snappi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    snappi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../clients/gosnappi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gosnappi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Configurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OTG Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manually-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manually download
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-and-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      create and add
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-bgp" class="md-nav__link">
+    <span class="md-ellipsis">
+      add bgp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    <span class="md-ellipsis">
+      display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environmental-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environmental variables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="otgen-open-traffic-generator-cli-tool">OTGen: Open Traffic Generator CLI Tool</h1>
+<p><img alt="Lint" src="https://github.com/open-traffic-generator/otgen/actions/workflows/golangci-lint.yml/badge.svg" />
+<img alt="System Tests" src="https://github.com/open-traffic-generator/otgen/actions/workflows/systest.yml/badge.svg" />
+<img alt="Builds" src="https://github.com/open-traffic-generator/otgen/actions/workflows/ci.yml/badge.svg" /></p>
+<h2 id="how-to-use">How to use</h2>
+<p>The idea behind <code>otgen</code> is to leverage shell pipe capabilities to break OTG API interactions into multiple stages with output of one feeding to the next. This way, each individual stage can be:</p>
+<ul>
+<li>easily parameterized, </li>
+<li>individually re-used,</li>
+<li>when needed, substituted by a custom implementation</li>
+</ul>
+<p>The shell pipe workflow on <code>otgen</code> looks the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>otgen<span class="w"> </span>create<span class="w"> </span>flow<span class="w"> </span>-s<span class="w"> </span><span class="m">1</span>.1.1.1<span class="w"> </span>-d<span class="w"> </span><span class="m">2</span>.2.2.2<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span><span class="w"> </span>--rate<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>otgen<span class="w"> </span>add<span class="w"> </span>flow<span class="w"> </span>-n<span class="w"> </span>f2<span class="w"> </span>-s<span class="w"> </span><span class="m">2</span>.2.2.2<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span>.1.1.1<span class="w"> </span>--sport<span class="w"> </span><span class="m">80</span><span class="w"> </span>--dport<span class="w"> </span><span class="m">1024</span><span class="w"> </span>--tx<span class="w"> </span>p2<span class="w"> </span>--rx<span class="w"> </span>p1<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>otgen<span class="w"> </span>run<span class="w"> </span>-k<span class="w"> </span>--metrics<span class="w"> </span>flow<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>otgen<span class="w"> </span>transform<span class="w"> </span>--metrics<span class="w"> </span>flow<span class="w"> </span>--counters<span class="w"> </span>frames<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>otgen<span class="w"> </span>display<span class="w"> </span>--mode<span class="w"> </span>table
+</code></pre></div>
+<p>Port locations are read from <code>ENV:OTG_LOCATION_P1</code> and <code>ENV:OTG_LOCATION_P2</code>.</p>
+<p>See <a href="#environmental-variables">Environmental variables</a> section for more options.</p>
+<h2 id="installation">Installation</h2>
+<p><code>otgen</code> is distributed as a precompiled binary for Linux and MacOS. You can also <a href="BUILD/">build it from source</a> for any other platform supported by Go language.</p>
+<h3 id="install-script">Install script</h3>
+<p><code>otgen</code> can be installed using the installation script which detects the operating system type and installs the relevant binary:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># download and install the latest release (may require sudo)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-sL<span class="w"> </span>https://get.otgcdn.net/otgen<span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># download a specific version - 0.4.0 in this example (may require sudo)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-sL<span class="w"> </span>https://get.otgcdn.net/otgen<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>--<span class="w"> </span>-v<span class="w"> </span><span class="m">0</span>.4.0
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># with wget</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://get.otgcdn.net/otgen<span class="k">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h3 id="manually-download">Manually download</h3>
+<p>To manually select and download a TAR archive with a precompiled <code>otgen</code> binary for your platform use <a href="https://github.com/open-traffic-generator/otgen/releases"><code>otgen releases</code></a> page.</p>
+<h2 id="command-reference">Command reference</h2>
+<h3 id="global-options">Global options</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>otgen<span class="w"> </span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="o">[</span>--log<span class="w"> </span>level<span class="o">]</span><span class="w">                       </span><span class="c1"># Logging level: err | warn | info | debug (default &quot;err&quot;)</span>
+</code></pre></div>
+<h3 id="create-and-add"><code>create</code> and <code>add</code></h3>
+<p>Create a new OTG configuration item that can be further passed to stdin of <code>otgen run</code> command.
+The <code>add</code> variant of the command first reads an OTG configuration from stdin.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>otgen<span class="w"> </span>create<span class="w"> </span>flow<span class="w">                     </span><span class="c1"># Create a configuration for a Traffic Flow</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="o">[</span>--name<span class="w"> </span>string<span class="o">]</span><span class="w">                     </span><span class="c1"># Flow name (default f1)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="o">[</span>--tx<span class="w"> </span>string<span class="o">]</span><span class="w">                       </span><span class="c1"># Test port name for TX (default p1) </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="o">[</span>--rx<span class="w"> </span>string<span class="o">]</span><span class="w">                       </span><span class="c1"># Test port name for RX (default p2) </span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="o">[</span>--txl<span class="w"> </span>string<span class="o">]</span><span class="w">                      </span><span class="c1"># Test port location string for TX (default localhost:5555) </span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="o">[</span>--rxl<span class="w"> </span>string<span class="o">]</span><span class="w">                      </span><span class="c1"># Test port location string for RX (default localhost:5556) </span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="o">[</span>--ipv4<span class="w"> </span><span class="o">]</span><span class="w">                           </span><span class="c1"># IP version 4 (default)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="o">[</span>--ipv6<span class="w"> </span><span class="o">]</span><span class="w">                           </span><span class="c1"># IP version 6</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="o">[</span>--proto<span class="w"> </span>icmp<span class="w"> </span><span class="p">|</span><span class="w"> </span>tcp<span class="w"> </span><span class="p">|</span><span class="w"> </span>udp<span class="o">]</span><span class="w">          </span><span class="c1"># IP transport protocol</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="o">[</span>--smac<span class="w"> </span>xx.xx.xx.xx.xx.xx<span class="o">]</span><span class="w">          </span><span class="c1"># Source MAC address. For device-bound flows, default value is copied from the Tx device</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="o">[</span>--dmac<span class="w"> </span>xx.xx.xx.xx.xx.xx<span class="o">]</span><span class="w">          </span><span class="c1"># Destination MAC address. For device-bound flows, default value &quot;auto&quot; enables ARP for IPv4 / ND for IPv6</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="o">[</span>--src<span class="w"> </span>x.x.x.x<span class="o">]</span><span class="w">                     </span><span class="c1"># Source IP address</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="o">[</span>--dst<span class="w"> </span>x.x.x.x<span class="o">]</span><span class="w">                     </span><span class="c1"># Destination IP address</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="o">[</span>--sport<span class="w"> </span>N<span class="o">]</span><span class="w">                         </span><span class="c1"># Source TCP or UDP port. If not specified, incrementing source port numbers would be used for each new packet</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="o">[</span>--dport<span class="w"> </span>N<span class="o">]</span><span class="w">                         </span><span class="c1"># Destination TCP or UDP port (default 7 - echo protocol)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="o">[</span>--swap<span class="o">]</span><span class="w">                            </span><span class="c1"># Swap default values of: Tx and Rx names and locations; source and destination MACs, IPs and TCP/UDP ports</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="o">[</span>--count<span class="w"> </span>N<span class="o">]</span><span class="w">                         </span><span class="c1"># Number of packets to transmit. Use 0 for continuous mode. (default 1000)</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="o">[</span>--rate<span class="w"> </span>N<span class="o">]</span><span class="w">                          </span><span class="c1"># Packet rate in packets per second. If not specified, default rate decision would be left to the traffic engine</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="o">[</span>--size<span class="w"> </span>N<span class="o">]</span><span class="w">                          </span><span class="c1"># Frame size in bytes. If not specified, default frame size decision would be left to the traffic engine</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="o">[</span>--loss<span class="o">]</span><span class="w">                            </span><span class="c1"># Enable loss metrics</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">  </span><span class="o">[</span>--latency<span class="w"> </span>sf<span class="w"> </span><span class="p">|</span><span class="w"> </span>ct<span class="o">]</span><span class="w">                 </span><span class="c1"># Enable latency metrics: sf for store_forward | ct for cut_through</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">  </span><span class="o">[</span>--timestamps<span class="o">]</span><span class="w">                      </span><span class="c1"># Enable metrics timestamps</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">  </span><span class="o">[</span>--nometrics<span class="w"> </span><span class="o">]</span><span class="w">                      </span><span class="c1"># Disable flow metrics</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>otgen<span class="w"> </span>create<span class="w"> </span>device<span class="w">                   </span><span class="c1"># Create a configuration for an Emulated Device</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="o">[</span>--name<span class="w"> </span>string<span class="o">]</span><span class="w">                     </span><span class="c1"># Device name (default otg1)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="o">[</span>--port<span class="w"> </span>string<span class="o">]</span><span class="w">                     </span><span class="c1"># Test port name (default p1)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="o">[</span>--location<span class="w"> </span>string<span class="o">]</span><span class="w">                 </span><span class="c1"># Test port location string (default localhost:5555)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="o">[</span>--mac<span class="w"> </span>xx.xx.xx.xx.xx.xx<span class="o">]</span><span class="w">           </span><span class="c1"># Device MAC address</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="o">[</span>--ip<span class="w"> </span>x.x.x.x<span class="o">]</span><span class="w">                      </span><span class="c1"># Device IP address</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="o">[</span>--gw<span class="w"> </span>x.x.x.x<span class="o">]</span><span class="w">                      </span><span class="c1"># Device default gateway</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="o">[</span>--prefix<span class="w"> </span>nn<span class="o">]</span><span class="w">                       </span><span class="c1"># Device network prefix</span>
+</code></pre></div>
+<h3 id="add-bgp"><code>add bgp</code></h3>
+<p>Adds a BGP router to an emulated device in the existing OTG configuration. Typical usage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>otgen<span class="w"> </span>create<span class="w"> </span>device<span class="w"> </span>--name<span class="w"> </span>r1<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>otgen<span class="w"> </span>add<span class="w"> </span>bgp<span class="w"> </span>--device<span class="w"> </span>r1<span class="w"> </span>--route<span class="w"> </span><span class="m">203</span>.0.113.0/24
+</code></pre></div>
+<p>Available parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>otgen<span class="w"> </span>add<span class="w"> </span>bgp<span class="w">                         </span><span class="c1"># Add a BGP configuration to an Emulated Device</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="o">[</span>--device<span class="w"> </span>string<span class="o">]</span><span class="w">                   </span><span class="c1"># Device name to add BGP configuration to (default &quot;otg1&quot;)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="o">[</span>--id<span class="o">]</span><span class="w">                              </span><span class="c1"># Router ID (default is an IP address of the interface the BGP configuration is attached to)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="o">[</span>--asn<span class="w"> </span>N<span class="o">]</span><span class="w">                           </span><span class="c1"># Autonomous System Number (default 65534)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="o">[</span>--peer<span class="w"> </span>x.x.x.x<span class="o">]</span><span class="w">                    </span><span class="c1"># Peer IP address (default is a GW address of the interface the BGP configuration is attached to)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="o">[</span>--type<span class="w"> </span>ebgp<span class="p">|</span>ibgp<span class="o">]</span><span class="w">                  </span><span class="c1"># BGP peering type: ebgp | ibgp (default &quot;ebgp&quot;)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="o">[</span>--route<span class="w"> </span>x.x.x.x/nn<span class="o">]</span><span class="w">                </span><span class="c1"># Route to advertise</span>
+</code></pre></div>
+<h3 id="run"><code>run</code></h3>
+<p>Requests OTG API endpoint to:</p>
+<ul>
+<li>apply an OTG configuration</li>
+<li>start Protocols, if any Devices are defined in the configuration</li>
+<li>run Traffic Flows</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>otgen<span class="w"> </span>run<span class="w"> </span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="o">[</span>--api<span class="w"> </span>https://otg-api-endpoint<span class="o">]</span><span class="w">    </span><span class="c1"># URL of OTG API endpoint. Overrides ENV:OTG_API (default &quot;https://localhost:8443&quot;)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="o">[</span>--insecure<span class="o">]</span><span class="w">                        </span><span class="c1"># Ignore X.509 certificate validation</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="o">[</span>--file<span class="w"> </span>otg.yml<span class="w"> </span><span class="p">|</span><span class="w"> </span>--file<span class="w"> </span>otg.json<span class="o">]</span><span class="w">  </span><span class="c1"># OTG configuration file. If not provided, will use stdin</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="o">[</span>--yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>--json<span class="o">]</span><span class="w">                   </span><span class="c1"># Format of OTG input</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="o">[</span>--rxbgp<span class="w"> </span><span class="m">10</span><span class="p">|</span>2x<span class="o">]</span><span class="w">                     </span><span class="c1"># How many BGP routes shall we receive to consider the protocol is up. In number routes or multiples of routes advertised (default 1x)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="o">[</span>--metrics<span class="w"> </span>port,flow,bgp4<span class="o">]</span><span class="w">          </span><span class="c1"># Metrics types to report as a comma-separated list: &quot;port&quot; for PortMetrics, &quot;flow&quot; for FlowMetrics, &quot;bgp4&quot; for Bgpv4Metrics</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="o">[</span>--interval<span class="w"> </span><span class="m">0</span>.5s<span class="o">]</span><span class="w">                   </span><span class="c1"># Interval to pull OTG metrics. Valid time units are &#39;ms&#39;, &#39;s&#39;, &#39;m&#39;, &#39;h&#39;. Example: 1s (default 0.5s)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="o">[</span>--xeta<span class="w"> </span><span class="m">2</span><span class="o">]</span><span class="w">                          </span><span class="c1"># How long to wait before forcing traffic to stop. In multiples of ETA. Example: 1.5 (default 2)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="o">[</span>--timeout<span class="w"> </span><span class="m">120</span><span class="o">]</span><span class="w">                     </span><span class="c1"># Maximum total run time, including protocols convergence and running traffic</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="o">[</span>--protocols<span class="w"> </span>auto<span class="p">|</span>ignore<span class="p">|</span>keep<span class="o">]</span><span class="w">      </span><span class="c1"># Protocols control mode: auto - detect, start and stop; ignore - do not detect, start or stop; keep - detect, start but do not stop</span>
+</code></pre></div>
+<h3 id="transform"><code>transform</code></h3>
+<p>Transform raw OTG metrics into a format suitable for further processing. If no parameters is provided, <code>transform</code> validates input for a match with OTG MetricsResponse data structure, and if matched, outputs it as is.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>otgen<span class="w"> </span>transform<span class="w"> </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="o">[</span>--metrics<span class="w"> </span>port<span class="p">|</span>flow<span class="o">]</span><span class="w">               </span><span class="c1"># Metrics type to transform: </span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">                                      </span><span class="c1">#   &quot;port&quot; for PortMetrics</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">                                      </span><span class="c1">#   &quot;flow&quot; for FlowMetrics</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="o">[</span>--counters<span class="w"> </span>frames<span class="p">|</span>bytes<span class="p">|</span>pps<span class="p">|</span>tput<span class="o">]</span><span class="w">  </span><span class="c1"># Metric counters to transform:</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">                                      </span><span class="c1">#   &quot;frames&quot; for frame count (default),</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">                                      </span><span class="c1">#   &quot;bytes&quot; for byte count,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">                                      </span><span class="c1">#   &quot;pps&quot; for frame rate, in packets per second</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">                                      </span><span class="c1">#   &quot;tput&quot; for throughput, in bytes per second (PortMetrics only)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="o">[</span>--file<span class="w"> </span>template.tmpl<span class="o">]</span><span class="w">              </span><span class="c1"># Go template file. If not provided, built-in templates will be used based on provided parameters</span>
+</code></pre></div>
+<h3 id="display"><code>display</code></h3>
+<p>Displays metrics of a running test as charts or a table.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>otgen<span class="w"> </span>display
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="o">[</span>--mode<span class="w"> </span>chart<span class="p">|</span>table<span class="o">]</span><span class="w">               </span><span class="c1"># Display type to show metrics as</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="o">[</span>--type<span class="w"> </span>line<span class="o">]</span><span class="w">                      </span><span class="c1"># Type of the chart displayed. Currently, only line charts are supported.</span>
+</code></pre></div>
+<h3 id="help"><code>help</code></h3>
+<p>For built-in help, use</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>otgen<span class="w"> </span>run<span class="w"> </span>--help
+</code></pre></div>
+<h3 id="version"><code>version</code></h3>
+<p>To check <code>otgen</code> version you have, use</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>otgen<span class="w"> </span>version
+</code></pre></div>
+<h2 id="environmental-variables">Environmental variables</h2>
+<p>Values of certain parameters in the OTG configuration depend on specifics of the traffic generator deployment. These values would typically stay the same between multiple <code>otgen</code> runs as long as the deployment stays the same. </p>
+<p>For example:</p>
+<ul>
+<li><code>location</code> string of the OTG <code>ports</code> section depends on traffic generator ports available for the test</li>
+<li>MAC addresses for OTG <code>flows</code> change only after re-deployment of containerized traffic generator components, and don't change in hardware setups</li>
+</ul>
+<p>For such parameters it may be more convenient to change default values used by <code>otgen</code> instead of specifying them as command-line arguments.</p>
+<p>Environmental variables is one of the mechanisms used by <code>otgen</code> to control default values. See below the full list of the variables recognized by <code>otgen</code> to redefine default values.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>OTG_API<span class="w">                               </span><span class="c1"># URL of OTG API endpoint</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>OTG_LOCATION_%PORT_NAME%<span class="w">              </span><span class="c1"># location for test port with a name PORT_NAME, for example:</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>OTG_LOCATION_P1<span class="w">                       </span><span class="c1"># location for test port &quot;p1&quot;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>OTG_LOCATION_P2<span class="w">                       </span><span class="c1"># location for test port &quot;p2&quot;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>OTG_FLOW_SMAC_P1<span class="w">                      </span><span class="c1"># Source MAC address to use for flows with Tx on port &quot;p1&quot;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>OTG_FLOW_DMAC_P1<span class="w">                      </span><span class="c1"># Destination MAC address to use for flows with Tx on port &quot;p1&quot;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>OTG_FLOW_SMAC_P2<span class="w">                      </span><span class="c1"># Source MAC address to use for flows with Tx on port &quot;p2&quot;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>OTG_FLOW_DMAC_P2<span class="w">                      </span><span class="c1"># Destination MAC address to use for flows with Tx on port &quot;p2&quot;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>OTG_FLOW_SRC_IPV4<span class="w">                     </span><span class="c1"># Source IPv4 address to use for flows</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>OTG_FLOW_DST_IPV4<span class="w">                     </span><span class="c1"># Destination IPv4 address to use for flows</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>OTG_FLOW_SRC_IPV6<span class="w">                     </span><span class="c1"># Source IPv6 address to use for flows</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>OTG_FLOW_DST_IPV6<span class="w">                     </span><span class="c1"># Destination IPv6 address to use for flows</span>
+</code></pre></div>
+<p>These are the values <code>otgen</code> uses if no variables or arguments were provided.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_API</span><span class="o">=</span><span class="s2">&quot;https://localhost:8443&quot;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_LOCATION_P1</span><span class="o">=</span><span class="s2">&quot;localhost:5555&quot;</span><span class="w">     </span><span class="c1"># ixia-c-traffic-engine for p1 (tx) listening on localhost:5555</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_LOCATION_P2</span><span class="o">=</span><span class="s2">&quot;localhost:5556&quot;</span><span class="w">     </span><span class="c1"># ixia-c-traffic-engine for p2 (rx) listening on localhost:5556</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_SMAC_P1</span><span class="o">=</span><span class="s2">&quot;02:00:00:00:01:aa&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_DMAC_P1</span><span class="o">=</span><span class="s2">&quot;02:00:00:00:02:aa&quot;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_SMAC_P2</span><span class="o">=</span><span class="s2">&quot;02:00:00:00:02:aa&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_DMAC_P2</span><span class="o">=</span><span class="s2">&quot;02:00:00:00:01:aa&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_SRC_IPV4</span><span class="o">=</span><span class="s2">&quot;192.0.2.1&quot;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_DST_IPV4</span><span class="o">=</span><span class="s2">&quot;192.0.2.2&quot;</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_SRC_IPV6</span><span class="o">=</span><span class="s2">&quot;fe80::000:00ff:fe00:01aa&quot;</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nb">export</span><span class="w"> </span><span class="nv">OTG_FLOW_DST_IPV6</span><span class="o">=</span><span class="s2">&quot;fe80::000:00ff:fe00:02aa&quot;</span>
+</code></pre></div>
+<p>Note, default values displayed via built-in <code>--help</code> output reflect currently set environmental variables values, except for test port location strings.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/open-traffic-generator" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://ixia-c.slack.com" target="_blank" rel="noopener" title="ixia-c.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+    
+  </body>
+</html>

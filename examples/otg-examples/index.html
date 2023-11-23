@@ -1,0 +1,1337 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../basic/">
+      
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+    
+    
+      
+        <title>OTG Examples - Open Traffic Generator APIs & Data Models</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-N6X4KDVDJF"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-N6X4KDVDJF",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-N6X4KDVDJF",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#open-traffic-generator-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Open Traffic Generator APIs &amp; Data Models" class="md-header__button md-logo" aria-label="Open Traffic Generator APIs & Data Models" data-md-component="logo">
+      
+  <img src="../../images/otg_icon_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Traffic Generator APIs & Data Models
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OTG Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/open-traffic-generator/models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    open-traffic-generator
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../model/" class="md-tabs__link">
+        
+  
+    
+  
+  Model
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../implementations/" class="md-tabs__link">
+        
+  
+    
+  
+  Implementations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../clients/" class="md-tabs__link">
+          
+  
+  Clients
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Open Traffic Generator APIs &amp; Data Models" class="md-nav__button md-logo" aria-label="Open Traffic Generator APIs & Data Models" data-md-component="logo">
+      
+  <img src="../../images/otg_icon_white.svg" alt="logo">
+
+    </a>
+    Open Traffic Generator APIs & Data Models
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/open-traffic-generator/models" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    open-traffic-generator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implementations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Clients
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Clients
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clients/curl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    curl
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clients/otgen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    otgen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clients/snappi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    snappi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../clients/gosnappi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    gosnappi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Configurations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OTG Examples
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    OTG Examples
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otg-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      OTG Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-under-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Under Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otg-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      OTG Client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI with Github Actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b2b-ixia-c-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      B2B Ixia-c Traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-b2b-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static B2B LAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frr-ixia-c-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      FRR Ixia-c Traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3xb2b-ixia-c-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      3xB2B Ixia-c Traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2b-ixia-c-bgp-and-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      B2B Ixia-c BGP and traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ixia-c-keng-arp-bgp-and-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ixia-c KENG ARP, BGP and traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hello-snappi-welcome-to-the-clab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hello, snappi! Welcome to the Clab!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dear-snappi-please-meet-scapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dear snappi, please meet Scapy!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtbh" class="md-nav__link">
+    <span class="md-ellipsis">
+      RTBH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#featureprofiles-in-hybrid-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      FeatureProfiles in Hybrid mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otg-with-ixia-l23-hardware-back-to-back-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      OTG with Ixia L23 Hardware: back-to-back setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kne-lab-with-bgp-and-traffic-via-arista-ceoslab-as-a-dut" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNE Lab with BGP and traffic via Arista cEOSLab as a DUT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otg-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      OTG Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-under-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Device Under Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otg-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      OTG Client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-with-github-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      CI with Github Actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab Descriptions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b2b-ixia-c-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      B2B Ixia-c Traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-b2b-lag" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static B2B LAG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frr-ixia-c-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      FRR Ixia-c Traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3xb2b-ixia-c-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      3xB2B Ixia-c Traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2b-ixia-c-bgp-and-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      B2B Ixia-c BGP and traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ixia-c-keng-arp-bgp-and-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ixia-c KENG ARP, BGP and traffic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hello-snappi-welcome-to-the-clab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hello, snappi! Welcome to the Clab!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dear-snappi-please-meet-scapy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dear snappi, please meet Scapy!
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtbh" class="md-nav__link">
+    <span class="md-ellipsis">
+      RTBH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#featureprofiles-in-hybrid-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      FeatureProfiles in Hybrid mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otg-with-ixia-l23-hardware-back-to-back-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      OTG with Ixia L23 Hardware: back-to-back setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kne-lab-with-bgp-and-traffic-via-arista-ceoslab-as-a-dut" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNE Lab with BGP and traffic via Arista cEOSLab as a DUT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="open-traffic-generator-examples">Open Traffic Generator examples</h1>
+<p><a href="https://github.com/open-traffic-generator/otg-examples/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/open-traffic-generator/otg-examples/actions/workflows/ci.yml/badge.svg" /></a></p>
+<h2 id="overview">Overview</h2>
+<p><a href="https://github.com/open-traffic-generator/otg-examples">OTG examples</a> repository is a great way to get started with <a href="https://otg.dev">Open Traffic Generator API</a>. It features a collection of software-only network labs ranging from very simple to more complex. To setup network labs in software we use containerized or virtualized NOS images.</p>
+<h2 id="otg-tools">OTG Tools</h2>
+<p>There are several <a href="https://otg.dev/implementations/">implementations</a> of OTG API. All the labs in this repository use <a href="https://www.keysight.com/us/en/products/network-test/protocol-load-test/keysight-elastic-network-generator.html">Keysight Elastic Network Generator</a> with different types of test ports:</p>
+<ul>
+<li><a href="https://otg.dev/implementations/#ixia-c">Ixia-c</a>: Ixia-c containerized software Traffic Engine (TE) and Protocol Engine (PE)</li>
+<li><a href="https://github.com/open-traffic-generator/ixia-c/blob/main/docs/deployments.md#deploy-ixia-c-one-using-containerlab">Ixia-c-one</a>: a single-container package of Ixia-c for Containerlab</li>
+<li><a href="https://www.keysight.com/us/en/products/network-test/network-test-hardware.html">IxOS Hardware</a>: Keysight Elastic Network Generator with Keysight/Ixia L23 Network Test Hardware</li>
+</ul>
+<h2 id="device-under-test">Device Under Test</h2>
+<p>Many network vendors provide versions of their Network Operating Systems as a CNF or VNF. To make OTG Examples available for a widest range of users, our labs use open-source or freely available NOSes like <a href="https://frrouting.org/">FRR</a>. Replacing FRR with a container from a different vendor is a matter of modifying one of the lab examples.</p>
+<p>Some examples don't have any DUT and use back-2-back connections between Test Ports. These are quite useful to make sure the Traffic Generator part works just fine by itself, before introducing a DUT.</p>
+<h2 id="otg-client">OTG Client</h2>
+<p>A job of an OTG Client is to communicating with a Traffic Generator via the OTG API and request it to perform tasks such as applying a configuration, starting protocols, running traffic, collecting metrics. Each example uses one (or sometimes more) of the following OTG Clients:</p>
+<ul>
+<li><a href="https://otg.dev/clients/curl/"><code>curl</code></a> - The most basic utility for any kind of REST API calls, including OTG</li>
+<li><a href="https://otg.dev/clients/otgen/"><code>otgen</code></a> - This command-line utility comes as part of OTG toolkit. It is capable of manipulating a wide range of OTG features while hiding a lot of complexity from a user</li>
+<li><a href="https://otg.dev/clients/snappi/"><code>snappi</code></a> - Test scripts written in <code>snappi</code>, an auto-generated Python module, can be executed against any traffic generator conforming to the Open Traffic Generator API.</li>
+<li><a href="https://otg.dev/clients/gosnappi/"><code>gosnappi</code></a> - Similar to <code>snappi</code>, test scripts written in <code>gosnappi</code>, an auto-generated Go module, can be executed against any traffic generator conforming to the Open Traffic Generator API.</li>
+<li><a href="https://github.com/openconfig/ondatra"><code>ondatra</code></a> – Ondatra is a framework for writing and running tests against both real and containerized network devices. When executing a test via the Open Traffic Generator API, it uses <code>gosnappi</code> client library internally.</li>
+</ul>
+<h2 id="infrastructure">Infrastructure</h2>
+<p>To manage deployment of the example labs, we use one of the following tools:</p>
+<ul>
+<li><a href="https://docs.docker.com/compose/">Docker Compose</a> - general-purpose tool for defining and running multi-container Docker applications</li>
+<li><a href="https://containerlab.dev/">Containerlab</a> - simple yet powerful specialized tool for orchestrating and managing container-based networking labs</li>
+<li><a href="https://github.com/open-traffic-generator/ixia-c-operator">Ixia-c Operator</a> – Ixia-c deployment orchestration engine compatible with K8s/KNE as well as Docker for Hybrid mode</li>
+<li><a href="https://github.com/openconfig/kne">OpenConfig KNE</a> – Kubernetes Network Emulation, which is a Google initiative to develop tooling for quickly setting up topologies of containers running various device OSes.</li>
+</ul>
+<h2 id="ci-with-github-actions">CI with Github Actions</h2>
+<p>Most of the lab examples include Github Action workflow for executing OTG tests on any changes to the lab code. This could serve as a template for your CI workflow.</p>
+<h2 id="reference">Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Lab</th>
+<th>OTG Tool</th>
+<th>DUT</th>
+<th>Client</th>
+<th>Infrastructure</th>
+<th>CI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b">B2B Ixia-c Traffic</a></td>
+<td>Ixia-c TE</td>
+<td>B2B</td>
+<td><code>otgen</code> &amp; <code>snappi</code></td>
+<td>Compose</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b-lag">Static B2B LAG</a></td>
+<td>Ixia-c TE</td>
+<td>B2B</td>
+<td><code>otgen</code></td>
+<td>Containerlab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-te-frr">FRR Ixia-c Traffic</a></td>
+<td>Ixia-c TE</td>
+<td>FRR</td>
+<td><code>otgen</code></td>
+<td>Containerlab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/b2b-3pair">3xB2B Ixia-c Traffic</a></td>
+<td>Ixia-c TE</td>
+<td>B2B</td>
+<td><code>otgen</code></td>
+<td>Compose</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/cpdp-b2b">B2B Ixia-c BGP and traffic</a></td>
+<td>Ixia-c PE+TE</td>
+<td>B2B</td>
+<td><code>gosnappi</code></td>
+<td>Compose</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/docker-compose/cpdp-frr">FRR Ixia-c ARP, BGP and traffic</a></td>
+<td>Ixia-c PE+TE</td>
+<td>FRR</td>
+<td><code>curl</code> &amp; <code>otgen</code></td>
+<td>Compose &amp; Clab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b">Hello, snappi! Welcome to the Clab!</a></td>
+<td>Ixia-c-one</td>
+<td>B2B</td>
+<td><code>snappi</code></td>
+<td>Containerlab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/clab/ixia-c-b2b/SCAPY.md">Dear snappi, please meet Scapy!</a></td>
+<td>Ixia-c-one</td>
+<td>B2B</td>
+<td><code>scapy</code> &amp; <code>snappi</code></td>
+<td>Containerlab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/clab/rtbh">RTBH</a></td>
+<td>Ixia-c-one</td>
+<td>FRR</td>
+<td><code>gosnappi</code></td>
+<td>Containerlab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/hybrid/fp-b2b">FeatureProfiles in Hybrid mode</a></td>
+<td>Ixia-c PE+TE</td>
+<td>B2B</td>
+<td><code>ondatra</code></td>
+<td>KENG Operator</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/hw/ixhw-b2b">B2B IxOS Hardware</a></td>
+<td>IxOS Hardware</td>
+<td>B2B</td>
+<td><code>snappi</code> &amp; <code>ondatra</code></td>
+<td>Compose</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="https://github.com/open-traffic-generator/otg-examples/blob/main/kne/bgp-ceos">cEOS BGP and Traffic in KNE</a></td>
+<td>Ixia-c PE+TE</td>
+<td>cEOS</td>
+<td><code>otgen</code></td>
+<td>KNE</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lab-descriptions">Lab Descriptions</h2>
+<h3 id="b2b-ixia-c-traffic"><a href="docker-compose/b2b">B2B Ixia-c Traffic</a></h3>
+<p>Ixia-c traffic engine back-to-back setup with Docker Compose. Fast and easy way to get started using <a href="https://github.com/open-traffic-generator/otgen"><code>otgen</code></a> CLI tool.</p>
+<h3 id="static-b2b-lag"><a href="clab/ixia-c-b2b-lag">Static B2B LAG</a></h3>
+<p>Two Ixia-c Traffic Engines connected back-2-back in a Containerlab environment over two pairs of ports in a LAG. The goal is to demonstrate how to create a static Link Aggregation Group (LAG) consisting of two ports and run traffic over the LAG interface.</p>
+<h3 id="frr-ixia-c-traffic"><a href="clab/ixia-c-te-frr">FRR Ixia-c Traffic</a></h3>
+<p>Ixia-c Traffic Engine and FRR. Demonstrates how to deploy Ixia-c Traffic Engine nodes in Containerlab. This setup has an FRR container as a Device Under Test.</p>
+<h3 id="3xb2b-ixia-c-traffic"><a href="docker-compose/b2b-3pair">3xB2B Ixia-c Traffic</a></h3>
+<p>Ixia-c 3 back-to-back pairs setup with Docker Compose. This lab is an extension of <a href="docker-compose/b2b/">Ixia-c back-2-back lab</a> traffic engine setup with more port pairs that is allowed with free version of Ixia-c. Use this lab to validate Ixia-c commercial licensing for basic traffic operations.</p>
+<h3 id="b2b-ixia-c-bgp-and-traffic"><a href="docker-compose/cpdp-b2b">B2B Ixia-c BGP and traffic</a></h3>
+<p>Ixia-c back-to-back BGP and traffic setup with Docker Compose. This is an extended version of a basic <a href="docker-compose/b2b/">Ixia-c back-2-back lab</a> with Ixia-c Protocol Engine added to emulate L2-3 protocols like BGP.</p>
+<h3 id="ixia-c-keng-arp-bgp-and-traffic"><a href="docker-compose/cpdp-frr">Ixia-c KENG ARP, BGP and traffic</a></h3>
+<p>Ixia-c ARP, BGP and traffic with FRR as a DUT. This lab demonstrates validation of an FRR DUT for basic BGP peering, prefix announcements and passing of traffic between announced subnets. The lab has two alternative deployment methods: Compose as well as Containerlab.</p>
+<h3 id="hello-snappi-welcome-to-the-clab"><a href="clab/ixia-c-b2b">Hello, snappi! Welcome to the Clab!</a></h3>
+<p>Basics of creating a Python program to control Ixia-c-one node, all packaged in a Containerlab topology.</p>
+<h3 id="dear-snappi-please-meet-scapy"><a href="clab/ixia-c-b2b/SCAPY/">Dear snappi, please meet Scapy!</a></h3>
+<p>Joint use of Scapy packet crafting Python module with snappi, to generate custom DNS flows via Ixia-c-one node.</p>
+<h3 id="rtbh"><a href="clab/rtbh">RTBH</a></h3>
+<p>Remote Triggered Black Hole (RTBH) is a common DDoS mitigation technique which uses BGP announcements to request an ISP to drop all traffic to an IP address under a DDoS attack.</p>
+<h3 id="featureprofiles-in-hybrid-mode"><a href="hybrid/fp-b2b">FeatureProfiles in Hybrid mode</a></h3>
+<p>An introduction to <a href="https://openconfig.net/">OpenConfig</a> <a href="https://github.com/openconfig/featureprofiles">FeatureProfiles</a> test suites built with the <a href="https://otg.dev">Open Traffic Generator API</a>.</p>
+<h3 id="otg-with-ixia-l23-hardware-back-to-back-setup"><a href="hw/ixhw-b2b">OTG with Ixia L23 Hardware: back-to-back setup</a></h3>
+<p>Demonstration of how the OTG API can be used to control <a href="https://www.keysight.com/us/en/products/network-test/network-test-hardware.html">Keysight/Ixia L23 Network Test Hardware</a>, including an example of running <a href="https://openconfig.net/">OpenConfig</a> <a href="https://github.com/openconfig/featureprofiles">FeatureProfiles</a> test suites.</p>
+<h3 id="kne-lab-with-bgp-and-traffic-via-arista-ceoslab-as-a-dut"><a href="kne/bgp-ceos">KNE Lab with BGP and traffic via Arista cEOSLab as a DUT</a></h3>
+<p>Validation of Arista cEOSLab DUT for basic BGP peering, prefix announcements and passing of traffic between announced subnets. To run OTG protocols and flows, <a href="https://www.keysight.com/us/en/products/network-test/protocol-load-test/keysight-elastic-network-generator.html">Keysight Elastic Network Generator</a> Community Edition is used with Ixia-c Traffic and Protocol Engine ports. To run the lab, <a href="https://github.com/openconfig/kne">OpenConfig KNE</a> is used on top of a KIND cluster – K8s environment running inside a single Docker container.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/open-traffic-generator" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://ixia-c.slack.com" target="_blank" rel="noopener" title="ixia-c.slack.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "navigation.tracking", "navigation.top"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+    
+  </body>
+</html>
