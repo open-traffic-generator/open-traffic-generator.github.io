@@ -9,7 +9,7 @@ To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator,
 * [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html): [snappi-ixnetwork](https://github.com/open-traffic-generator/snappi-ixnetwork) enables running OTG/snappi scripts with Keysight IxNetwork
 * [**Magna**](https://github.com/openconfig/magna): open-source OTG implementation from [OpenConfig project](https://openconfig.net/)
 * [**TRex**](https://trex-tgn.cisco.com/): [snappi-trex](https://github.com/open-traffic-generator/snappi-trex) enables running OTG/snappi scripts with TRex. Supports layer 2-3 Traffic Flows
-
+* [**Spirent**](https://github.com/Spirent-STC): [stc-otg-setup](https://github.com/Spirent-STC/stc-otg-setup) enables running OTG/snappi scripts with STC. 
 ## Ixia-c
 
 [Ixia-c](https://ixia-c.dev) is a modern, powerful and API-driven traffic generator designed to cater to the needs of hyperscalers, network hardware vendors and network automation professionals.
@@ -87,3 +87,6 @@ The plugin converts Open Traffic Generator configuration into the equivalent TRe
 The above diagram outlines the overall process of how the Open Traffic Generator API is able to interface with TRex and generate traffic over its network interfaces.
 
 The snappi-trex plugin supports stateless **Traffic Flows** over **Test Ports**. For the full list of supported OTG capabilities, see [snappi-trex documentation](https://github.com/open-traffic-generator/snappi-trex/blob/main/docs/features.md).
+
+## Spirent
+[**stc-otg-setup**](ttps://github.com/Spirent-STC/stc-otg-setup) an OTG and gNMI service that enables all versions of Spirent TestCenter (hardware and virtual) to participate in snappi, gosnappi and ONDATRA test cases for traffic generation and analysis
