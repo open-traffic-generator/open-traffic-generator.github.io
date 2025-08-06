@@ -1,2 +1,8 @@
-.DS_Store
+scratch
+env
+*.pcap
+*.log
+venv
 site
+.DS_Store
+*.bkp

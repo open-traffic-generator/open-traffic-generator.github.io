@@ -40,6 +40,7 @@ To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator,
 * [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html): [snappi-ixnetwork](https://github.com/open-traffic-generator/snappi-ixnetwork) enables running OTG/snappi scripts with Keysight IxNetwork
 * [**Magna**](https://github.com/openconfig/magna): open-source OTG implementation from [OpenConfig project](https://openconfig.net/)
 * [**TRex**](https://trex-tgn.cisco.com/): [snappi-trex](https://github.com/open-traffic-generator/snappi-trex) enables running OTG/snappi scripts with TRex. Supports layer 2-3 Traffic Flows
+* [**Spirent**](https://github.com/Spirent-STC): [stc-otg-setup](https://github.com/Spirent-STC/stc-otg-setup) enables running OTG/snappi scripts with STC. 
 
 ## [Clients](clients.md)
 
