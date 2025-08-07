@@ -89,4 +89,4 @@ The above diagram outlines the overall process of how the Open Traffic Generator
 The snappi-trex plugin supports stateless **Traffic Flows** over **Test Ports**. For the full list of supported OTG capabilities, see [snappi-trex documentation](https://github.com/open-traffic-generator/snappi-trex/blob/main/docs/features.md).
 
 ## Spirent
-[**stc-otg-setup**](ttps://github.com/Spirent-STC/stc-otg-setup) an OTG and gNMI service that enables all versions of Spirent TestCenter (hardware and virtual) to participate in snappi, gosnappi and ONDATRA test cases for traffic generation and analysis
+[**stc-otg-setup**](https://github.com/Spirent-STC/stc-otg-setup) an OTG and gNMI service that enables all versions of Spirent TestCenter (hardware and virtual) to participate in snappi, gosnappi and ONDATRA test cases for traffic generation and analysis
