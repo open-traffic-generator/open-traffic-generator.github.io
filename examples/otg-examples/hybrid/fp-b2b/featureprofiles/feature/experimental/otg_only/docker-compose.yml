@@ -1,0 +1,46 @@
+version: "3.9"
+services:
+  keng-layer23-hw-server:
+    image: ghcr.io/open-traffic-generator/keng-layer23-hw-server:0.13.0-6
+    container_name: keng-layer23-hw-server
+    restart: always
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    command:
+      - "dotnet"
+      - "otg-ixhw.dll"
+      - "--trace"
+      - "--log-level"
+      - "trace"
+  otg-gnmi-server:
+    image: ghcr.io/open-traffic-generator/otg-gnmi-server:1.13.0
+    container_name: otg-gnmi-server
+    profiles: ["all", "gnmi"]
+    restart: always
+    ports:
+      - "50051:50051"
+    depends_on:
+      keng-controller:
+        condition: service_started
+    command:
+      - "-http-server"
+      - "https://keng-controller:8443"
+      - "--debug"
+  keng-controller:
+    image: ghcr.io/open-traffic-generator/keng-controller:0.1.0-53
+    container_name: keng-controller
+    restart: always
+    ports:
+      - "8443:8443"
+      - "40051:40051"
+    depends_on:
+      keng-layer23-hw-server:
+        condition: service_started
+    command:
+      - "--accept-eula"
+      - "--debug"
+      - "--keng-layer23-hw-server"
+      - "keng-layer23-hw-server:5001"
+    environment:
+      - LICENSE_SERVERS=10.36.237.239

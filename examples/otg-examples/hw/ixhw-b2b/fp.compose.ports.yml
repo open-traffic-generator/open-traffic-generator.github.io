@@ -1,0 +1,12 @@
+services:
+  controller:
+    ports:
+      - "8443:8443"
+      - "40051:40051"
+  layer23-hw-server:
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+  gnmi-server:
+    ports:
+      - "50051:50051"
