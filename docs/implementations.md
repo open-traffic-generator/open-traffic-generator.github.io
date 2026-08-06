@@ -9,7 +9,7 @@ To apply OTG in practice, an OTG-compatible tool, typically a Traffic Generator,
 * [**IxNetwork**](https://www.keysight.com/us/en/products/network-test/protocol-load-test/ixnetwork.html): [snappi-ixnetwork](https://github.com/open-traffic-generator/snappi-ixnetwork) enables running OTG/snappi scripts with Keysight IxNetwork
 * [**Magna**](https://github.com/openconfig/magna): open-source OTG implementation from [OpenConfig project](https://openconfig.net/)
 * [**TRex**](https://trex-tgn.cisco.com/): [snappi-trex](https://github.com/open-traffic-generator/snappi-trex) enables running OTG/snappi scripts with TRex. Supports layer 2-3 Traffic Flows
-* [**Spirent**](https://github.com/Spirent-STC): [stc-otg-setup](https://github.com/Spirent-STC/stc-otg-setup) enables running OTG/snappi scripts with STC. 
+* [**VIAVI**](https://github.com/Viavi-TestCenter): [stc-otg-setup](https://github.com/Viavi-TestCenter/stc-otg-setup) enables running OTG/snappi scripts with the VIAVI TestCenter L2-3 traffic generation solutions. 
 ## Ixia-c
 
 [Ixia-c](https://ixia-c.dev) is a modern, powerful and API-driven traffic generator designed to cater to the needs of hyperscalers, network hardware vendors and network automation professionals.
@@ -88,5 +88,22 @@ The above diagram outlines the overall process of how the Open Traffic Generator
 
 The snappi-trex plugin supports stateless **Traffic Flows** over **Test Ports**. For the full list of supported OTG capabilities, see [snappi-trex documentation](https://github.com/open-traffic-generator/snappi-trex/blob/main/docs/features.md).
 
-## Spirent
-[**stc-otg-setup**](https://github.com/Spirent-STC/stc-otg-setup) an OTG and gNMI service that enables all versions of Spirent TestCenter (hardware and virtual) to participate in snappi, gosnappi and ONDATRA test cases for traffic generation and analysis
+## VIAVI
+[**Viavi TestCenter**](https://www.viavisolutions.com/en-us/products/testcenter) is a high‑performance test platform for validating and optimizing network and AI infrastructures, protocols, and applications at scale. To accelerate automation and seamless ecosystem integration, TestCenter  supports OTG (Open Traffic Generator) and gNMI (gRPC Network Management Interface) APIs. These open, standardized interfaces enable customers to build reusable, open‑source test scripts and deploy them across flexible, scalable, and fully automated test environments.
+
+![stc-otg-setup Deployment Diagram](images/stc-otg-setup.png)
+<p style="text-align: center;"><sub>Fig. 3. stc-otg-setup Deployment Diagram</sub></p>
+
+VIAVI TestCenter
+stc-otg-setup an OTG and gNMI service that enables all versions of VIAVI TestCenter (hardware and virtual) to participate in snappi, gosnappi, and ONDATRA test cases for traffic generation and analysis.
+
+Components
+
+* **OTG Service** — OTG and gNMI API bridge, translating OTG calls to native VIAVI TC REST API commands
+* **VIAVI TC ReST API** — Labserver or local; controls hardware and virtual test ports
+* **gNMI Server** — exposes OTG metrics over gNMI
+
+Deployment
+
+* **Standalone**: Linux host install alongside the VIAVI TC ReST application
+* **Docker Compose**: containerized OTG + Labserver, scalable for test labs and CI environments
